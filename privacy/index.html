@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Proof for Mac</title>
+  <meta name="description" content="Privacy policy for Proof, the Mac photo culling app. Proof collects no personal data.">
+  <link rel="canonical" href="https://www.proof-photo.com/privacy/">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" href="../assets/img/icon.png" type="image/png">
+</head>
+<body>
+  <header>
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container nav-inner">
+        <a href="/" class="nav-logo" aria-label="Proof home">
+          <img src="../assets/img/proof-mark.png" alt="" aria-hidden="true" width="28" height="28">
+          <span>Proof</span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#workflow">Workflow</a></li>
+          <li><a href="/#users">Who It Is For</a></li>
+          <li><a href="/support/">Support</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <h1>Privacy Policy</h1>
+        <p>Last updated: July 4, 2026</p>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <p><strong>Proof does not collect, transmit, or share any personal data.</strong></p>
+
+      <h2>Your Photos</h2>
+      <p>Proof accesses photos on your Mac solely to display thumbnails and allow you to view, rate, and cull them. No photos, metadata, or file paths are uploaded to any server. Everything stays on your device.</p>
+
+      <h2>Your Catalog</h2>
+      <p>All ratings, flags, adjustments, and settings are stored in a SQLite database on your Mac at <code>~/Library/Application Support/Proof/</code>. This file never leaves your device.</p>
+
+      <h2>Analytics</h2>
+      <p>Proof does not use any analytics, telemetry, or crash-reporting services. No usage data is collected.</p>
+
+      <h2>Third-Party Services</h2>
+      <p>Proof does not integrate with any third-party services and does not send data anywhere. There are no SDKs, advertising networks, or cloud services embedded in the app.</p>
+
+      <h2>Contact</h2>
+      <p>If you have privacy questions, contact: <a href="mailto:hello@lunero.com.au">hello@lunero.com.au</a></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 Erik Sawaya. All rights reserved.</p>
+        <nav aria-label="Footer links">
+          <a href="/">Home</a> &nbsp;·&nbsp;
+          <a href="/support/">Support</a> &nbsp;·&nbsp;
+          <a href="/privacy/">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.querySelector('.site-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+    const toggle = document.getElementById('nav-toggle');
+    const links = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proof — Fast Photo Culling App for Mac</title>
+  <meta name="description" content="Proof is a fast, non-destructive photo library and culling app for Mac. Browse, flag, rate, compare, organize, and export your photos without touching your originals.">
+  <link rel="canonical" href="https://www.proof-photo.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Proof — Fast Photo Culling App for Mac">
+  <meta property="og:description" content="Cull large photo shoots faster on Mac with a quiet, non-destructive library built for flags, ratings, comparisons, and exports.">
+  <meta property="og:image" content="https://www.proof-photo.com/assets/img/proof-mark.png">
+  <meta property="og:url" content="https://www.proof-photo.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Proof — Fast Photo Culling App for Mac">
+  <meta name="twitter:description" content="Cull large photo shoots faster on Mac with a quiet, non-destructive library built for flags, ratings, comparisons, and exports.">
+  <meta name="twitter:image" content="https://www.proof-photo.com/assets/img/proof-mark.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Proof",
+    "operatingSystem": "macOS",
+    "applicationCategory": "MultimediaApplication",
+    "description": "Proof is a fast, non-destructive photo library and culling app for Mac photographers.",
+    "url": "https://www.proof-photo.com/",
+    "softwareVersion": "0.2.0",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/img/icon.png" type="image/png">
+</head>
+<body>
+  <header>
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container nav-inner">
+        <a href="/" class="nav-logo" aria-label="Proof home">
+          <img src="assets/img/proof-mark.png" alt="" aria-hidden="true" width="28" height="28">
+          <span>Proof</span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#workflow">Workflow</a></li>
+          <li><a href="#users">Who It Is For</a></li>
+          <li><a href="support/">Support</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero">
+      <div class="container">
+        <div class="hero-badge">Native macOS app</div>
+        <h1>Proof</h1>
+        <p class="hero-tagline">Fast photo culling for Mac.</p>
+        <p class="hero-body">
+          Proof helps photographers move through large shoots with less friction. Browse folders in place,
+          flag keepers, reject misses, compare similar frames, and export finished copies without touching your originals.
+        </p>
+        <div class="hero-actions">
+          <a href="support/" class="btn-primary">
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm.75 4.75a.75.75 0 00-1.5 0v3.5H5.75a.75.75 0 000 1.5h3.5v3.5a.75.75 0 001.5 0v-3.5h3.5a.75.75 0 000-1.5h-3.5v-3.5z"/></svg>
+            Read the User Guide
+          </a>
+          <a href="#features" class="btn-secondary">See features</a>
+        </div>
+        <p class="trust-line">Native macOS app. Local catalogs. Non-destructive workflow.</p>
+        <div class="hero-screenshot hero-brand-panel">
+          <div class="hero-brand-panel-inner">
+            <img src="assets/img/proof-mark.png" alt="" aria-hidden="true" width="124" height="124">
+            <h2>Quiet, local-first culling for photographers.</h2>
+            <p>Current screenshots are still being prepared. The brand mark here keeps the page anchored to the real app identity in the meantime.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="current">
+      <div class="container">
+        <div>
+          <span class="section-label">Current state</span>
+          <h2 class="section-title">Developing is in progress</h2>
+          <p class="section-sub">
+            Proof is focused first on fast culling and library workflow. A deeper develop workspace is being refined for future releases,
+            with non-destructive edits, GPU-accelerated preview rendering, crop, masks, and high-bit-depth RAW/HEIF support.
+          </p>
+        </div>
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <h3>Current features</h3>
+            <ul>
+              <li><svg class="icon-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Native macOS desktop app</li>
+              <li><svg class="icon-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Local multi-catalog photo library</li>
+              <li><svg class="icon-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Virtualized thumbnail grid for large folders</li>
+              <li><svg class="icon-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Pick, reject, unflag, star ratings, and color labels</li>
+              <li><svg class="icon-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Survey comparison with synced zoom and pan</li>
+            </ul>
+          </div>
+          <div class="comparison-card accent-card">
+            <h3>Developing is in progress</h3>
+            <p class="section-sub section-sub-wide mb-0">
+              Do not present Develop as a finished headline feature until it is visible in the shipping app.
+              The focus today is still on fast culling, local control, and a quiet workflow that keeps originals in place.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Built for the cull</span>
+          <h2 class="section-title">Everything you need to cull a shoot</h2>
+          <p class="section-sub">
+            Before the edit comes the decision. Proof gives you a focused space to review, rate, compare, and organize a shoot quickly,
+            without burying the workflow inside a heavy all-in-one editor.
+          </p>
+        </div>
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3>Browse folders in place</h3>
+            <p>Add photo folders to a catalog without moving them. Proof references files where they already live and keeps your work in a local catalog.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <h3>Cull with keyboard speed</h3>
+            <p>Use pick, reject, star ratings, and color labels across single photos or whole selections. Auto-advance keeps first-pass culling moving.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
+                <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+              </svg>
+            </div>
+            <h3>Compare near-duplicates</h3>
+            <p>Survey mode shows selected photos side by side, with synced zoom and pan for checking focus, expressions, and small differences.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/>
+                <path d="M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07"/>
+              </svg>
+            </div>
+            <h3>Inspect in Loupe</h3>
+            <p>Open a clean single-photo view with fit, 100%, and up to 400% zoom, plus magnifier and hand-pan tools.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                <path d="M4 7h16M4 12h16M4 17h10"/>
+              </svg>
+            </div>
+            <h3>Organize without losing control</h3>
+            <p>Use folders, subfolders, collections, keywords, camera and lens filters, and duplicate detection while keeping your originals on disk.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                <path d="M12 22C6.48 22 2 17.52 2 12S6.48 2 12 2s10 4.48 10 10-4.48 10-10 10z"/>
+                <path d="M12 8v4l3 3"/>
+              </svg>
+            </div>
+            <h3>Export when ready</h3>
+            <p>Export JPEG, PNG, TIFF, or WebP copies with your work baked in. Proof never modifies the original file.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="workflow">
+      <div class="container">
+        <div>
+          <span class="section-label">Workflow</span>
+          <h2 class="section-title">A workflow that stays out of the way</h2>
+          <p class="section-sub">
+            Proof fits into the way photographers already work: files on disk, folders by shoot, quick passes for picks and rejects,
+            deeper inspection for close calls, then export or hand off to the editor you already use.
+          </p>
+        </div>
+        <div class="workflow-cards">
+          <article class="workflow-card">
+            <div class="step-num">01</div>
+            <h3>Add a folder</h3>
+            <p>Choose a folder of photos. Proof indexes metadata, creates thumbnails, and keeps the originals in place.</p>
+          </article>
+          <article class="workflow-card">
+            <div class="step-num">02</div>
+            <h3>Cull fast</h3>
+            <p>Navigate with the keyboard. Press `P` for picks, `X` for rejects, `0-5` for ratings, and `6-9` for color labels.</p>
+          </article>
+          <article class="workflow-card">
+            <div class="step-num">03</div>
+            <h3>Compare and refine</h3>
+            <p>Use Survey to compare selected frames or Loupe to inspect one image at a time.</p>
+          </article>
+          <article class="workflow-card">
+            <div class="step-num">04</div>
+            <h3>Organize selects</h3>
+            <p>Move files to folders, create subfolders, add photos to collections, set keywords, and filter by metadata.</p>
+          </article>
+          <article class="workflow-card">
+            <div class="step-num">05</div>
+            <h3>Export or hand off</h3>
+            <p>Export finished copies, reveal originals in Finder, open files in an external editor, or drag files out to Finder and upload targets.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="users">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Who it is for</span>
+          <h2 class="section-title">Built for photographers with real shoots</h2>
+          <p class="section-sub">
+            Proof is aimed at people who need to review a lot of frames quickly, keep the files local, and move on without a heavy cloud workflow.
+          </p>
+        </div>
+        <div class="features-grid">
+          <article class="feature-card">
+            <h3>Wedding and event photographers</h3>
+            <p>Move quickly through thousands of frames, compare bursts, mark selects, and separate rejects before deep editing.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Fuji photographers</h3>
+            <p>Work with Fuji RAW and HEIF/HEIC libraries in a Mac-native app that is aware of Fuji-specific workflow needs.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Local-first photographers</h3>
+            <p>Keep files on your disks, not inside someone else's cloud library. Proof stores catalog data locally and leaves originals alone.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Photographers who already have an editor</h3>
+            <p>Use Proof to browse, rate, compare, organize, and hand off selects to external editors when the creative edit begins.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy">
+      <div class="container">
+        <div>
+          <span class="section-label">Privacy</span>
+          <h2 class="section-title">Private by design</h2>
+          <p class="section-sub">
+            Proof is built around local files and local catalogs. It does not need an account to index, cull, compare, or export your photos.
+            Your originals stay on your Mac or external drives, and your catalog stores your work locally.
+          </p>
+        </div>
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <h3>What stays local</h3>
+            <ul>
+              <li><svg class="icon-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Original files on disk</li>
+              <li><svg class="icon-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Ratings, flags, labels, keywords, and collections</li>
+              <li><svg class="icon-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Catalog data and cached thumbnails</li>
+            </ul>
+          </div>
+          <div class="comparison-card accent-card">
+            <h3>Read the policy</h3>
+            <p class="section-sub section-sub-wide mb-16">
+              The privacy page explains the local-only catalog behavior, no cloud upload for the core workflow, and the default non-destructive handling of originals.
+            </p>
+            <a href="privacy/">Open privacy policy</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta-band">
+      <div class="container">
+        <h2>Start your next cull in Proof</h2>
+        <p>Explore the support docs and privacy policy for the current workflow, file handling, and catalog behavior.</p>
+        <a href="support/" class="btn-primary">
+          <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" width="20" height="20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm.75 4.75a.75.75 0 00-1.5 0v3.5H5.75a.75.75 0 000 1.5h3.5v3.5a.75.75 0 001.5 0v-3.5h3.5a.75.75 0 000-1.5h-3.5v-3.5z"/></svg>
+          Read the User Guide
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo" aria-label="Proof home">
+            <img src="assets/img/proof-mark.png" alt="" aria-hidden="true" width="28" height="28">
+            <span>Proof</span>
+          </a>
+          <p>Fast, non-destructive photo culling for Mac.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <div class="footer-col">
+            <h4>App</h4>
+            <ul>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#workflow">Workflow</a></li>
+              <li><a href="support/">Support</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="privacy/">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Erik Sawaya. All rights reserved. Made in Australia.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.querySelector('.site-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    const toggle = document.getElementById('nav-toggle');
+    const links = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  </script>
+</body>
+</html>
