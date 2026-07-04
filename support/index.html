@@ -10,67 +10,11 @@
   <meta property="og:title" content="Support — Proof for Mac">
   <meta property="og:description" content="Get help with Proof, the Mac photo culling app.">
   <meta property="og:url" content="https://www.proof-photo.com/support/">
-  <meta property="og:image" content="https://www.proof-photo.com/assets/img/proof-mark.png">
+  <meta property="og:image" content="https://www.proof-photo.com/assets/img/icon.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Support — Proof for Mac">
   <meta name="twitter:description" content="Get help with Proof, the Mac photo culling app.">
-  <meta name="twitter:image" content="https://www.proof-photo.com/assets/img/proof-mark.png">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Where does Proof store my photos?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Proof never moves your photos. It references them in place, the same way Lightroom does. Your originals stay exactly where they are on disk."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Where is my catalog stored?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Your catalog is stored in a SQLite database at ~/Library/Application Support/Proof/. Back it up like any other important file."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I add a folder?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Click the + button in the sidebar and choose a folder. Proof indexes it immediately and builds thumbnails in the background."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does Proof support Fuji RAW files?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Proof supports RAW files from all major camera brands, as well as HEIF/HEIC files."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I delete rejected photos?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Mark shots as Rejected with the X key, then press Backspace or Delete. Proof moves rejected photos to the macOS Trash."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I report a bug?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Email hello@lunero.com.au with your macOS version and a description of what happened. Screenshots or screen recordings are helpful."
-        }
-      }
-    ]
-  }
-  </script>
+  <meta name="twitter:image" content="https://www.proof-photo.com/assets/img/icon.png">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="icon" href="../assets/img/icon.png" type="image/png">
 </head>
@@ -79,14 +23,15 @@
     <nav class="site-nav" aria-label="Main navigation">
       <div class="container nav-inner">
         <a href="/" class="nav-logo" aria-label="Proof home">
-          <img src="../assets/img/proof-mark.png" alt="" aria-hidden="true" width="28" height="28">
+          <img src="../assets/img/icon.png" alt="" aria-hidden="true" width="28" height="28">
           <span>Proof</span>
         </a>
         <ul class="nav-links" id="nav-links">
           <li><a href="/#features">Features</a></li>
-          <li><a href="/#workflow">Workflow</a></li>
-          <li><a href="/#users">Who It Is For</a></li>
+          <li><a href="/#screenshots">Screenshots</a></li>
+          <li><a href="/#develop">Develop</a></li>
           <li><a href="/support/">Support</a></li>
+          <li><a href="/#download">Download</a></li>
         </ul>
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
           <span></span><span></span><span></span>
@@ -99,23 +44,64 @@
     <div class="page-hero">
       <div class="container">
         <h1>Support</h1>
-        <p>Proof is a native Mac app for photo culling and library management. If you have a question or run into an issue, we're here to help.</p>
+        <p>Proof is a native Mac app for photo culling and library management. If you have a question or run into an issue, we&apos;re here to help.</p>
       </div>
     </div>
 
     <div class="page-content">
-      <h2>Contact</h2>
-      <p>For questions, bug reports, or feedback, email us directly. Include your macOS version and a description of what happened.</p>
-      <a href="mailto:hello@lunero.com.au" class="contact-email">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        hello@lunero.com.au
-      </a>
+      <div class="support-layout">
+        <section class="support-panel" id="contact">
+          <h2>Contact</h2>
+          <p>Send a question, bug report, or privacy note through the form below. We&apos;ll reply by email.</p>
+
+          <form id="contact-form" class="contact-form" action="/api/contact" method="post">
+            <div class="form-grid">
+              <label class="field">
+                <span>Name</span>
+                <input name="name" type="text" autocomplete="name" required>
+              </label>
+              <label class="field">
+                <span>Email</span>
+                <input name="email" type="email" autocomplete="email" required>
+              </label>
+              <label class="field field-full">
+                <span>Subject</span>
+                <input name="subject" type="text" autocomplete="off" required value="Proof support request">
+              </label>
+              <label class="field field-full">
+                <span>Message</span>
+                <textarea name="message" rows="7" required></textarea>
+              </label>
+              <label class="visually-hidden" aria-hidden="true">
+                Company
+                <input name="company" type="text" tabindex="-1" autocomplete="off">
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-primary" id="contact-submit">
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm.75 4.75a.75.75 0 00-1.5 0v3.5H5.75a.75.75 0 000 1.5h3.5v3.5a.75.75 0 001.5 0v-3.5h3.5a.75.75 0 000-1.5h-3.5v-3.5z"/></svg>
+                Send message
+              </button>
+              <p class="form-note">Your message goes to the Proof team through Resend.</p>
+            </div>
+
+            <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <aside class="support-aside">
+          <h2>Before you send</h2>
+          <p>Your message is most useful when it includes the macOS version, what you were doing, and any steps that reproduce the issue.</p>
+          <p>The form keeps the public site free of email addresses while still giving you a direct reply path.</p>
+        </aside>
+      </div>
 
       <h2>Frequently Asked Questions</h2>
       <div class="faq-list">
         <details>
           <summary>Where does Proof store my photos?</summary>
-          <p>Proof never moves your photos. It references them in place, the same way Lightroom does. Your originals stay exactly where they are on disk.</p>
+          <p>Proof references the folders you choose instead of copying everything into a separate cloud library. Your originals stay in place on disk.</p>
         </details>
 
         <details>
@@ -129,33 +115,18 @@
         </details>
 
         <details>
-          <summary>Does Proof support Fuji RAW files?</summary>
-          <p>Yes. Proof supports RAW files from all major camera brands, as well as HEIF/HEIC files.</p>
-        </details>
-
-        <details>
           <summary>How do I delete rejected photos?</summary>
           <p>Mark shots as Rejected with the <strong>X</strong> key, then press <strong>Backspace / Delete</strong>. Proof moves rejected photos to the macOS Trash.</p>
         </details>
 
         <details>
-          <summary>I removed a folder but my photos are still on disk - is that normal?</summary>
-          <p>Yes. "Remove from catalog" only removes the catalog entry so Proof stops tracking that folder. Files on disk are never touched.</p>
-        </details>
-
-        <details>
           <summary>Does Proof work without an internet connection?</summary>
-          <p>Yes. Proof is entirely local. No internet connection is required for any feature. There are no accounts, no cloud sync, and no analytics.</p>
-        </details>
-
-        <details>
-          <summary>Is Proof a Lightroom replacement?</summary>
-          <p>Proof covers the culling and library management side of a Lightroom workflow - flagging, rating, comparing, and organizing. If you need deep non-destructive editing, a dedicated editor pairs well with Proof.</p>
+          <p>Yes. Proof is entirely local. No internet connection is required for core workflow features.</p>
         </details>
 
         <details>
           <summary>How do I report a bug?</summary>
-          <p>Email <a href="mailto:hello@lunero.com.au">hello@lunero.com.au</a> with your macOS version and a description of what happened. Screenshots or screen recordings are helpful.</p>
+          <p>Use the contact form above and include your macOS version plus a short description of what happened.</p>
         </details>
       </div>
     </div>
@@ -179,11 +150,60 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 8);
     }, { passive: true });
+
     const toggle = document.getElementById('nav-toggle');
     const links = document.getElementById('nav-links');
     toggle.addEventListener('click', () => {
       const open = links.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open);
+    });
+
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('contact-status');
+    const submit = document.getElementById('contact-submit');
+    const subjectInput = form.elements.subject;
+
+    function setStatus(message, state) {
+      status.textContent = message;
+      status.dataset.state = state;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('sent') === '1') {
+      setStatus("Message sent. We'll reply by email soon.", 'success');
+      history.replaceState({}, '', window.location.pathname);
+    } else if (params.get('error')) {
+      setStatus(decodeURIComponent(params.get('error').replace(/\+/g, ' ')), 'error');
+      history.replaceState({}, '', window.location.pathname);
+    }
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      setStatus('', '');
+      submit.disabled = true;
+      submit.setAttribute('aria-busy', 'true');
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: new FormData(form),
+        });
+
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok || !data.ok) {
+          throw new Error(data.error || 'Message could not be sent.');
+        }
+
+        form.reset();
+        subjectInput.value = 'Proof support request';
+        setStatus("Message sent. We'll reply by email soon.", 'success');
+      } catch (error) {
+        setStatus(error.message || 'Message could not be sent.', 'error');
+      } finally {
+        submit.disabled = false;
+        submit.removeAttribute('aria-busy');
+      }
     });
   </script>
 </body>

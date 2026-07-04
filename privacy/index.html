@@ -14,14 +14,15 @@
     <nav class="site-nav" aria-label="Main navigation">
       <div class="container nav-inner">
         <a href="/" class="nav-logo" aria-label="Proof home">
-          <img src="../assets/img/proof-mark.png" alt="" aria-hidden="true" width="28" height="28">
+          <img src="../assets/img/icon.png" alt="" aria-hidden="true" width="28" height="28">
           <span>Proof</span>
         </a>
         <ul class="nav-links" id="nav-links">
           <li><a href="/#features">Features</a></li>
-          <li><a href="/#workflow">Workflow</a></li>
-          <li><a href="/#users">Who It Is For</a></li>
+          <li><a href="/#screenshots">Screenshots</a></li>
+          <li><a href="/#develop">Develop</a></li>
           <li><a href="/support/">Support</a></li>
+          <li><a href="/#download">Download</a></li>
         </ul>
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
           <span></span><span></span><span></span>
@@ -34,7 +35,7 @@
     <div class="page-hero">
       <div class="container">
         <h1>Privacy Policy</h1>
-        <p>Last updated: July 4, 2026</p>
+        <p>Last updated: July 5, 2026</p>
       </div>
     </div>
 
@@ -53,8 +54,8 @@
       <h2>Third-Party Services</h2>
       <p>Proof does not integrate with any third-party services and does not send data anywhere. There are no SDKs, advertising networks, or cloud services embedded in the app.</p>
 
-      <h2>Contact</h2>
-      <p>If you have privacy questions, contact: <a href="mailto:hello@lunero.com.au">hello@lunero.com.au</a></p>
+      <h2>Questions</h2>
+      <p>Use the <a href="/support/#contact">support form</a> if you have a privacy question or want to request a review of your data handling concern.</p>
     </div>
   </main>
 
@@ -76,6 +77,7 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 8);
     }, { passive: true });
+
     const toggle = document.getElementById('nav-toggle');
     const links = document.getElementById('nav-links');
     toggle.addEventListener('click', () => {

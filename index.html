@@ -9,12 +9,13 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Proof — Fast Photo Culling App for Mac">
   <meta property="og:description" content="Cull large photo shoots faster on Mac with a quiet, non-destructive library built for flags, ratings, comparisons, and exports.">
-  <meta property="og:image" content="https://www.proof-photo.com/assets/img/proof-mark.png">
+  <meta property="og:image" content="https://www.proof-photo.com/assets/img/icon.png">
   <meta property="og:url" content="https://www.proof-photo.com/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Proof — Fast Photo Culling App for Mac">
   <meta name="twitter:description" content="Cull large photo shoots faster on Mac with a quiet, non-destructive library built for flags, ratings, comparisons, and exports.">
-  <meta name="twitter:image" content="https://www.proof-photo.com/assets/img/proof-mark.png">
+  <meta name="twitter:image" content="https://www.proof-photo.com/assets/img/icon.png">
+  <meta name="apple-touch-icon" content="assets/img/icon.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -23,16 +24,9 @@
     "operatingSystem": "macOS",
     "applicationCategory": "MultimediaApplication",
     "description": "Proof is a fast, non-destructive photo library and culling app for Mac photographers.",
-    "url": "https://www.proof-photo.com/",
-    "softwareVersion": "0.2.0",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
+    "url": "https://www.proof-photo.com/"
   }
   </script>
-
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" href="assets/img/icon.png" type="image/png">
 </head>
@@ -41,14 +35,15 @@
     <nav class="site-nav" aria-label="Main navigation">
       <div class="container nav-inner">
         <a href="/" class="nav-logo" aria-label="Proof home">
-          <img src="assets/img/proof-mark.png" alt="" aria-hidden="true" width="28" height="28">
+          <img src="assets/img/icon.png" alt="" aria-hidden="true" width="28" height="28">
           <span>Proof</span>
         </a>
         <ul class="nav-links" id="nav-links">
           <li><a href="#features">Features</a></li>
-          <li><a href="#workflow">Workflow</a></li>
-          <li><a href="#users">Who It Is For</a></li>
-          <li><a href="support/">Support</a></li>
+          <li><a href="#screenshots">Screenshots</a></li>
+          <li><a href="#develop">Develop</a></li>
+          <li><a href="/support/">Support</a></li>
+          <li><a href="#download">Download</a></li>
         </ul>
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
           <span></span><span></span><span></span>
@@ -68,50 +63,20 @@
           flag keepers, reject misses, compare similar frames, and export finished copies without touching your originals.
         </p>
         <div class="hero-actions">
-          <a href="support/" class="btn-primary">
+          <a href="#download" class="btn-primary">
             <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm.75 4.75a.75.75 0 00-1.5 0v3.5H5.75a.75.75 0 000 1.5h3.5v3.5a.75.75 0 001.5 0v-3.5h3.5a.75.75 0 000-1.5h-3.5v-3.5z"/></svg>
-            Read the User Guide
+            Download for Mac
           </a>
-          <a href="#features" class="btn-secondary">See features</a>
+          <a href="#screenshots" class="btn-secondary">See screenshots</a>
         </div>
         <p class="trust-line">Native macOS app. Local catalogs. Non-destructive workflow.</p>
-        <div class="hero-screenshot hero-brand-panel">
-          <div class="hero-brand-panel-inner">
-            <img src="assets/img/proof-mark.png" alt="" aria-hidden="true" width="124" height="124">
-            <h2>Quiet, local-first culling for photographers.</h2>
-            <p>Current screenshots are still being prepared. The brand mark here keeps the page anchored to the real app identity in the meantime.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="current">
-      <div class="container">
-        <div>
-          <span class="section-label">Current state</span>
-          <h2 class="section-title">Developing is in progress</h2>
-          <p class="section-sub">
-            Proof is focused first on fast culling and library workflow. A deeper develop workspace is being refined for future releases,
-            with non-destructive edits, GPU-accelerated preview rendering, crop, masks, and high-bit-depth RAW/HEIF support.
-          </p>
-        </div>
-        <div class="comparison-grid">
-          <div class="comparison-card">
-            <h3>Current features</h3>
-            <ul>
-              <li><svg class="icon-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Native macOS desktop app</li>
-              <li><svg class="icon-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Local multi-catalog photo library</li>
-              <li><svg class="icon-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Virtualized thumbnail grid for large folders</li>
-              <li><svg class="icon-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Pick, reject, unflag, star ratings, and color labels</li>
-              <li><svg class="icon-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Survey comparison with synced zoom and pan</li>
-            </ul>
-          </div>
-          <div class="comparison-card accent-card">
-            <h3>Developing is in progress</h3>
-            <p class="section-sub section-sub-wide mb-0">
-              Do not present Develop as a finished headline feature until it is visible in the shipping app.
-              The focus today is still on fast culling, local control, and a quiet workflow that keeps originals in place.
-            </p>
+        <div class="hero-preview" aria-label="Proof screenshot placeholder">
+          <div class="hero-preview-inner">
+            <img src="assets/img/icon.png" alt="" aria-hidden="true" width="132" height="132">
+            <div>
+              <h2>Grid screenshot coming soon.</h2>
+              <p>This placeholder marks the future app grid image for the homepage hero.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -195,6 +160,79 @@
       </div>
     </section>
 
+    <section id="screenshots">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Screenshots</span>
+          <h2 class="section-title">See it in action</h2>
+          <p class="section-sub">
+            Replace these placeholders with the real app captures when the assets are ready.
+          </p>
+        </div>
+        <div class="screenshots-grid">
+          <figure>
+            <!-- Future asset: assets/img/screenshot-grid.webp -->
+            <div class="screenshot-placeholder">
+              <div class="placeholder-stack">
+                <img src="assets/img/icon.png" alt="" aria-hidden="true" width="56" height="56">
+                <span>Grid screenshot placeholder</span>
+              </div>
+            </div>
+            <figcaption>Grid view placeholder - future folder sidebar and selection capture</figcaption>
+          </figure>
+          <figure>
+            <!-- Future asset: assets/img/screenshot-survey.webp -->
+            <div class="screenshot-placeholder">
+              <div class="placeholder-stack">
+                <img src="assets/img/icon.png" alt="" aria-hidden="true" width="56" height="56">
+                <span>Survey screenshot placeholder</span>
+              </div>
+            </div>
+            <figcaption>Survey view placeholder - future side-by-side comparison capture</figcaption>
+          </figure>
+          <figure>
+            <!-- Future asset: assets/img/screenshot-loupe.webp -->
+            <div class="screenshot-placeholder">
+              <div class="placeholder-stack">
+                <img src="assets/img/icon.png" alt="" aria-hidden="true" width="56" height="56">
+                <span>Loupe screenshot placeholder</span>
+              </div>
+            </div>
+            <figcaption>Loupe view placeholder - future single-image inspection capture</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="develop">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Develop</span>
+          <h2 class="section-title">Develop tools are being refined for a future release.</h2>
+          <p class="section-sub">
+            The current release focuses on fast culling and local library work. The editing surface is being shaped as a calmer,
+            non-destructive place for future photo adjustments without changing the core workflow.
+          </p>
+        </div>
+        <div class="comparison-grid">
+          <article class="comparison-card">
+            <h3>What is being refined</h3>
+            <ul>
+              <li><svg class="icon-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Exposure and color controls for future edits</li>
+              <li><svg class="icon-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Crop and straighten tools</li>
+              <li><svg class="icon-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Local, non-destructive editing workflow</li>
+            </ul>
+          </article>
+          <article class="comparison-card accent-card">
+            <h3>What stays true</h3>
+            <p class="section-sub section-sub-wide mb-0">
+              Proof keeps the same quiet, local-first approach: files stay on disk, the catalog stays local, and the app stays focused on photographers who want a fast review pass before deeper work.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="workflow">
       <div class="container">
         <div>
@@ -247,15 +285,15 @@
         <div class="features-grid">
           <article class="feature-card">
             <h3>Wedding and event photographers</h3>
-            <p>Move quickly through thousands of frames, compare bursts, mark selects, and separate rejects before deep editing.</p>
+            <p>Move quickly through thousands of frames, compare bursts, mark selects, and separate rejects before deeper editing.</p>
           </article>
           <article class="feature-card">
-            <h3>Fuji photographers</h3>
-            <p>Work with Fuji RAW and HEIF/HEIC libraries in a Mac-native app that is aware of Fuji-specific workflow needs.</p>
+            <h3>High-volume hobbyists and travel photographers</h3>
+            <p>Work through larger local folders without importing everything into a heavy cloud library.</p>
           </article>
           <article class="feature-card">
             <h3>Local-first photographers</h3>
-            <p>Keep files on your disks, not inside someone else's cloud library. Proof stores catalog data locally and leaves originals alone.</p>
+            <p>Keep files on your disks, not inside someone else&apos;s cloud library. Proof stores catalog data locally and leaves originals alone.</p>
           </article>
           <article class="feature-card">
             <h3>Photographers who already have an editor</h3>
@@ -285,24 +323,36 @@
             </ul>
           </div>
           <div class="comparison-card accent-card">
-            <h3>Read the policy</h3>
+            <h3>Need help?</h3>
             <p class="section-sub section-sub-wide mb-16">
-              The privacy page explains the local-only catalog behavior, no cloud upload for the core workflow, and the default non-destructive handling of originals.
+              Use the support form to send a question, bug report, or privacy note. The reply path stays in the app support flow instead of exposing an email address on the public site.
             </p>
-            <a href="privacy/">Open privacy policy</a>
+            <a href="/support/#contact">Open support form</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="cta-band">
+    <section id="download">
       <div class="container">
-        <h2>Start your next cull in Proof</h2>
-        <p>Explore the support docs and privacy policy for the current workflow, file handling, and catalog behavior.</p>
-        <a href="support/" class="btn-primary">
-          <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" width="20" height="20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm.75 4.75a.75.75 0 00-1.5 0v3.5H5.75a.75.75 0 000 1.5h3.5v3.5a.75.75 0 001.5 0v-3.5h3.5a.75.75 0 000-1.5h-3.5v-3.5z"/></svg>
-          Read the User Guide
-        </a>
+        <div class="section-header">
+          <span class="section-label">Download</span>
+          <h2 class="section-title">Download for Mac</h2>
+          <p class="section-sub">
+            Gumroad download coming soon. The notarized DMG link will replace the placeholder below when the release is ready.
+          </p>
+        </div>
+        <div class="download-panel">
+          <div class="download-copy">
+            <p class="download-eyebrow">Notarized DMG</p>
+            <h3>Gumroad download coming soon</h3>
+            <p>Replace the placeholder link with the final Gumroad URL for the notarized disk image.</p>
+          </div>
+          <a class="btn-primary download-link" href="#download" data-download-target="gumroad-notarized-dmg">
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm.75 4.75a.75.75 0 00-1.5 0v3.5H5.75a.75.75 0 000 1.5h3.5v3.5a.75.75 0 001.5 0v-3.5h3.5a.75.75 0 000-1.5h-3.5v-3.5z"/></svg>
+            Gumroad download coming soon
+          </a>
+        </div>
       </div>
     </section>
   </main>
@@ -312,7 +362,7 @@
       <div class="footer-inner">
         <div class="footer-brand">
           <a href="/" class="nav-logo" aria-label="Proof home">
-            <img src="assets/img/proof-mark.png" alt="" aria-hidden="true" width="28" height="28">
+            <img src="assets/img/icon.png" alt="" aria-hidden="true" width="28" height="28">
             <span>Proof</span>
           </a>
           <p>Fast, non-destructive photo culling for Mac.</p>
@@ -322,14 +372,15 @@
             <h4>App</h4>
             <ul>
               <li><a href="#features">Features</a></li>
-              <li><a href="#workflow">Workflow</a></li>
-              <li><a href="support/">Support</a></li>
+              <li><a href="#screenshots">Screenshots</a></li>
+              <li><a href="#download">Download</a></li>
             </ul>
           </div>
           <div class="footer-col">
             <h4>Legal</h4>
             <ul>
-              <li><a href="privacy/">Privacy Policy</a></li>
+              <li><a href="/support/">Support</a></li>
+              <li><a href="/privacy/">Privacy Policy</a></li>
             </ul>
           </div>
         </nav>
