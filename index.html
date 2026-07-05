@@ -185,35 +185,51 @@
         </div>
         <div class="screenshots-grid">
           <figure class="shot-card">
-            <img src="assets/img/proof-grid.png" alt="Proof grid view with folders, filters, and selected images">
+            <button type="button" class="shot-trigger" data-lightbox-src="assets/img/proof-grid.png" data-lightbox-alt="Proof grid view with folders, filters, and selected images" data-lightbox-caption="Grid view - folder browsing, ratings, and quick culling">
+              <img src="assets/img/proof-grid.png" alt="Proof grid view with folders, filters, and selected images">
+            </button>
             <figcaption>Grid view - folder browsing, ratings, and quick culling</figcaption>
           </figure>
           <figure class="shot-card">
-            <img src="assets/img/proof-survey.png" alt="Proof survey view comparing two selected photos side by side">
+            <button type="button" class="shot-trigger" data-lightbox-src="assets/img/proof-survey.png" data-lightbox-alt="Proof survey view comparing two selected photos side by side" data-lightbox-caption="Survey view - side-by-side comparison with synced zoom and pan">
+              <img src="assets/img/proof-survey.png" alt="Proof survey view comparing two selected photos side by side">
+            </button>
             <figcaption>Survey view - side-by-side comparison with synced zoom and pan</figcaption>
           </figure>
           <figure class="shot-card">
-            <img src="assets/img/proof-loupe.png" alt="Proof loupe view showing a single photo at large size">
+            <button type="button" class="shot-trigger" data-lightbox-src="assets/img/proof-loupe.png" data-lightbox-alt="Proof loupe view showing a single photo at large size" data-lightbox-caption="Loupe view - single-image inspection and close evaluation">
+              <img src="assets/img/proof-loupe.png" alt="Proof loupe view showing a single photo at large size">
+            </button>
             <figcaption>Loupe view - single-image inspection and close evaluation</figcaption>
           </figure>
           <figure class="shot-card">
-            <img src="assets/img/proof-ratings.png" alt="Proof ratings workflow showing star and pick controls">
+            <button type="button" class="shot-trigger" data-lightbox-src="assets/img/proof-ratings.png" data-lightbox-alt="Proof ratings workflow showing star and pick controls" data-lightbox-caption="Ratings and picks - quick sorting for large shoots">
+              <img src="assets/img/proof-ratings.png" alt="Proof ratings workflow showing star and pick controls">
+            </button>
             <figcaption>Ratings and picks - quick sorting for large shoots</figcaption>
           </figure>
           <figure class="shot-card">
-            <img src="assets/img/proof-labels.png" alt="Proof color labels workflow with label controls visible">
+            <button type="button" class="shot-trigger" data-lightbox-src="assets/img/proof-labels.png" data-lightbox-alt="Proof color labels workflow with label controls visible" data-lightbox-caption="Labels - color coding for fast organization">
+              <img src="assets/img/proof-labels.png" alt="Proof color labels workflow with label controls visible">
+            </button>
             <figcaption>Labels - color coding for fast organization</figcaption>
           </figure>
           <figure class="shot-card">
-            <img src="assets/img/proof-catalogs.png" alt="Proof catalog management showing local folders and collections">
+            <button type="button" class="shot-trigger" data-lightbox-src="assets/img/proof-catalogs.png" data-lightbox-alt="Proof catalog management showing local folders and collections" data-lightbox-caption="Catalogs - local shoot organization and folder management">
+              <img src="assets/img/proof-catalogs.png" alt="Proof catalog management showing local folders and collections">
+            </button>
             <figcaption>Catalogs - local shoot organization and folder management</figcaption>
           </figure>
           <figure class="shot-card">
-            <img src="assets/img/proof-preferences.png" alt="Proof preferences window with application settings">
+            <button type="button" class="shot-trigger" data-lightbox-src="assets/img/proof-preferences.png" data-lightbox-alt="Proof preferences window with application settings" data-lightbox-caption="Preferences - app settings and workflow defaults">
+              <img src="assets/img/proof-preferences.png" alt="Proof preferences window with application settings">
+            </button>
             <figcaption>Preferences - app settings and workflow defaults</figcaption>
           </figure>
           <figure class="shot-card">
-            <img src="assets/img/proof-fujifilm-film-sim-metadata.png" alt="Proof metadata view showing Fujifilm film simulation information">
+            <button type="button" class="shot-trigger" data-lightbox-src="assets/img/proof-fujifilm-film-sim-metadata.png" data-lightbox-alt="Proof metadata view showing Fujifilm film simulation information" data-lightbox-caption="Metadata - Fujifilm film simulation details and import information">
+              <img src="assets/img/proof-fujifilm-film-sim-metadata.png" alt="Proof metadata view showing Fujifilm film simulation information">
+            </button>
             <figcaption>Metadata - Fujifilm film simulation details and import information</figcaption>
           </figure>
         </div>
@@ -391,6 +407,17 @@
     </section>
   </main>
 
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+    <button type="button" class="lightbox-backdrop" data-lightbox-close aria-label="Close screenshot viewer"></button>
+    <div class="lightbox-panel" role="document">
+      <button type="button" class="lightbox-close" data-lightbox-close aria-label="Close screenshot viewer">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <img id="lightbox-image" alt="">
+      <p id="lightbox-caption"></p>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <div class="container">
       <div class="footer-inner">
@@ -437,6 +464,44 @@
     toggle.addEventListener('click', () => {
       const open = links.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open);
+    });
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const shotTriggers = document.querySelectorAll('.shot-trigger');
+
+    function openLightbox(trigger) {
+      lightboxImage.src = trigger.dataset.lightboxSrc;
+      lightboxImage.alt = trigger.dataset.lightboxAlt || '';
+      lightboxCaption.textContent = trigger.dataset.lightboxCaption || '';
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('lightbox-open');
+      lightbox.querySelector('.lightbox-close')?.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('lightbox-open');
+      lightboxImage.removeAttribute('src');
+      lightboxImage.alt = '';
+      lightboxCaption.textContent = '';
+    }
+
+    shotTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => openLightbox(trigger));
+    });
+
+    lightbox.querySelectorAll('[data-lightbox-close]').forEach((button) => {
+      button.addEventListener('click', closeLightbox);
+    });
+
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && lightbox.classList.contains('open')) {
+        closeLightbox();
+      }
     });
   </script>
 </body>

@@ -477,6 +477,92 @@ section { padding: 96px 0; }
   color: var(--text-secondary);
   background: var(--surface);
 }
+.shot-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+.shot-trigger img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 3106 / 2116;
+  object-fit: cover;
+  transition: transform 0.18s ease;
+}
+.shot-trigger:hover img,
+.shot-trigger:focus-visible img {
+  transform: scale(1.01);
+}
+
+/* ── Lightbox ── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 80;
+}
+.lightbox.open {
+  display: grid;
+  place-items: center;
+}
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  background: rgba(0,0,0,0.82);
+  cursor: zoom-out;
+}
+.lightbox-panel {
+  position: relative;
+  z-index: 1;
+  width: min(94vw, 1480px);
+  max-height: 92vh;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: rgba(10,10,10,0.96);
+  box-shadow: 0 40px 120px rgba(0,0,0,0.65);
+}
+.lightbox-panel img {
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  display: block;
+  background: #000;
+  border-radius: var(--radius-sm);
+}
+.lightbox-panel p {
+  margin: 12px 4px 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(20,20,20,0.9);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 2;
+}
+.lightbox-close svg {
+  width: 18px;
+  height: 18px;
+}
+body.lightbox-open {
+  overflow: hidden;
+}
 
 /* ── Demo ── */
 .demo-panel {
@@ -793,6 +879,10 @@ details p {
   .workflow-cards { grid-template-columns: 1fr 1fr; }
   #screenshots .screenshots-grid { grid-template-columns: 1fr; }
   .hero-logo-card img { width: min(180px, 100%); }
+  .lightbox-panel {
+    width: min(96vw, 1480px);
+    padding: 12px;
+  }
   .download-panel { flex-direction: column; align-items: stretch; }
   .download-link[data-download-target] { max-width: none; }
   .support-layout,
