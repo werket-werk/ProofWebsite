@@ -117,7 +117,7 @@ a:hover { text-decoration: underline; }
 
 /* ── Hero ── */
 #hero {
-  padding: 96px 0 80px;
+  padding: 64px 0 72px;
   text-align: center;
 }
 .hero-badge {
@@ -147,7 +147,7 @@ a:hover { text-decoration: underline; }
 }
 .hero-body {
   max-width: 560px;
-  margin: 0 auto 40px;
+  margin: 0 auto 30px;
   color: var(--text-secondary);
   font-size: 1.05rem;
   line-height: 1.7;
@@ -158,13 +158,13 @@ a:hover { text-decoration: underline; }
   justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 64px;
+  margin-bottom: 36px;
 }
 .trust-line {
   text-align: center;
   color: var(--text-secondary);
   font-size: 0.92rem;
-  margin-bottom: 28px;
+  margin-bottom: 22px;
 }
 .btn-primary {
   display: inline-flex;
@@ -205,17 +205,18 @@ a:hover { text-decoration: underline; }
 .btn-secondary:hover { color: var(--text); }
 
 .hero-preview {
+  width: min(94vw, 1480px);
+  margin: 0 auto;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
   box-shadow: 0 32px 80px rgba(0,0,0,0.6);
-  padding: 20px;
+  padding: clamp(12px, 1.4vw, 22px);
   background:
-  radial-gradient(circle at top, rgba(59,130,246,0.16), transparent 42%),
+    radial-gradient(circle at top, rgba(59,130,246,0.16), transparent 42%),
     linear-gradient(180deg, rgba(20,20,20,0.98), rgba(10,10,10,0.96));
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 360px;
 }
 .hero-banner {
   width: 100%;
@@ -441,9 +442,7 @@ section { padding: 96px 0; }
   margin-top: 56px;
 }
 #screenshots figure {
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid var(--border);
+  margin: 0;
 }
 #screenshots .shot-card img {
   width: 100%;
@@ -452,18 +451,19 @@ section { padding: 96px 0; }
   object-fit: cover;
 }
 #screenshots figcaption {
-  padding: 16px 20px;
+  padding-top: 10px;
   font-size: 0.875rem;
   color: var(--text-secondary);
-  background: var(--surface);
 }
 .shot-trigger {
   display: block;
   width: 100%;
   padding: 0;
   border: 0;
+  border-radius: 0;
   background: transparent;
   cursor: zoom-in;
+  overflow: hidden;
 }
 .shot-trigger img {
   width: 100%;
@@ -481,12 +481,18 @@ section { padding: 96px 0; }
 .lightbox {
   position: fixed;
   inset: 0;
-  display: none;
-  z-index: 80;
-}
-.lightbox.open {
   display: grid;
   place-items: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 80;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
+}
+.lightbox.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 .lightbox-backdrop {
   position: absolute;
