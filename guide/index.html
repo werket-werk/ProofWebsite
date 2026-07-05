@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User Guide — Proof for Mac</title>
+  <meta name="description" content="A practical Proof user guide for installing the Mac app, creating catalogs, adding folders, culling photos, comparing frames, exporting, and troubleshooting.">
+  <link rel="canonical" href="https://www.proof-photo.com/guide/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="User Guide — Proof for Mac">
+  <meta property="og:description" content="Learn the core Proof workflow: catalogs, folders, culling, Loupe, Survey, export, and cleanup.">
+  <meta property="og:url" content="https://www.proof-photo.com/guide/">
+  <meta property="og:image" content="https://www.proof-photo.com/assets/img/proof-banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="User Guide — Proof for Mac">
+  <meta name="twitter:description" content="Learn the core Proof workflow: catalogs, folders, culling, Loupe, Survey, export, and cleanup.">
+  <meta name="twitter:image" content="https://www.proof-photo.com/assets/img/proof-banner.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" href="../assets/img/icon.png" type="image/png">
+</head>
+<body>
+  <header>
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container nav-inner">
+        <a href="/" class="nav-logo" aria-label="Proof home">
+          <img src="../assets/img/icon.png" alt="" aria-hidden="true" width="28" height="28">
+          <span>Proof</span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#screenshots">Screenshots</a></li>
+          <li><a href="/#develop">Develop</a></li>
+          <li><a href="/guide/">Guide</a></li>
+          <li><a href="/support/">Support</a></li>
+          <li><a href="/#download">Download</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <h1>User Guide</h1>
+        <p>A practical walkthrough for getting Proof installed, building a catalog, culling a shoot, comparing close frames, and exporting copies.</p>
+        <div class="doc-actions">
+          <a class="btn-primary" href="/manual/">Open full manual</a>
+          <a class="btn-secondary" href="/support/">Get support</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content doc-page">
+      <div class="doc-layout">
+        <aside class="doc-toc" aria-label="Guide contents">
+          <h2>Contents</h2>
+          <ol>
+            <li><a href="#install">Install</a></li>
+            <li><a href="#catalogs">Catalogs</a></li>
+            <li><a href="#folders">Folders</a></li>
+            <li><a href="#views">Views</a></li>
+            <li><a href="#culling">Culling</a></li>
+            <li><a href="#compare">Compare</a></li>
+            <li><a href="#export">Export</a></li>
+            <li><a href="#shortcuts">Shortcuts</a></li>
+          </ol>
+        </aside>
+
+        <article class="doc-copy">
+          <section id="install">
+            <h2>Install and Open Proof</h2>
+            <p>Proof runs on macOS and is distributed as a Mac app. Open the DMG, drag <strong>Proof</strong> into <strong>Applications</strong>, then Control-click the app and choose <strong>Open</strong> the first time macOS warns you.</p>
+            <p>If macOS says the app is damaged, remove the quarantine attribute and open it again:</p>
+            <p><code>xattr -dr com.apple.quarantine /Applications/Proof.app</code></p>
+          </section>
+
+          <section id="catalogs">
+            <h2>Create or Open a Catalog</h2>
+            <p>A catalog is Proof's local database for your library. It stores folder references, thumbnails, previews, ratings, flags, color labels, keywords, collections, and edit metadata.</p>
+            <div class="doc-callout">
+              <p><strong>Your original files stay where they are.</strong> Proof references photos in place. Catalog work is separate from the originals unless you explicitly move, rename, export, or move files to Trash.</p>
+            </div>
+            <p>On first launch, create a new <code>.proof</code> catalog or open an existing one. Later, use the catalog menu in the top-left toolbar to switch catalogs, create another catalog, or reopen a recent catalog.</p>
+          </section>
+
+          <section id="folders">
+            <h2>Add and Sync Folders</h2>
+            <p>Click <strong>Add Folder</strong> and choose a folder of photos. Proof scans the folder and subfolders, reads metadata, creates thumbnails, and shows the folder in the left sidebar.</p>
+            <ul>
+              <li><strong>All Photographs</strong> shows every indexed photo in the catalog.</li>
+              <li>Added root folders can include expandable subfolders.</li>
+              <li>Offline and missing states appear when source folders or files are unavailable.</li>
+            </ul>
+            <p>Use <strong>Rescan</strong> after files change outside Proof. A rescan adds new photos, refreshes changed metadata, marks missing files, and preserves existing ratings, flags, keywords, collections, and edit metadata.</p>
+            <p>Right-click a folder to reveal it in Finder, rescan it, reconnect an offline folder, rebuild thumbnails, remove missing catalog rows, or remove the folder from the catalog. Removing a folder from the catalog does not delete files from disk.</p>
+          </section>
+
+          <section id="views">
+            <h2>Use the Three Main Views</h2>
+            <table>
+              <thead>
+                <tr><th>View</th><th>Key</th><th>Use</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Grid</td><td><code>G</code></td><td>Browse, select, filter, sort, organize, and cull thumbnails.</td></tr>
+                <tr><td>Loupe</td><td><code>E</code></td><td>Inspect one photo large, zoom, pan, review metadata, and add keywords.</td></tr>
+                <tr><td>Survey</td><td><code>N</code></td><td>Compare selected photos side by side.</td></tr>
+              </tbody>
+            </table>
+            <p>Press <code>F</code> to enter an immersive full-screen photo view. Press <code>F</code> again or <code>Esc</code> to exit.</p>
+          </section>
+
+          <section id="culling">
+            <h2>Cull With Flags, Ratings, and Labels</h2>
+            <p>Culling works from Grid, Loupe, and Survey. Navigate through the shoot, then mark the current photo or current selection.</p>
+            <table>
+              <thead>
+                <tr><th>Action</th><th>Shortcut</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Pick</td><td><code>P</code></td></tr>
+                <tr><td>Reject</td><td><code>X</code></td></tr>
+                <tr><td>Clear flag</td><td><code>U</code></td></tr>
+                <tr><td>Set rating</td><td><code>0</code> to <code>5</code></td></tr>
+                <tr><td>Red, yellow, green, blue labels</td><td><code>6</code>, <code>7</code>, <code>8</code>, <code>9</code></td></tr>
+              </tbody>
+            </table>
+            <p>Enable <strong>Auto-advance</strong> in the filter bar or Preferences to jump to the next photo after flagging, rating, or labeling. Auto-advance is disabled for batch selection operations so the selected set remains stable.</p>
+          </section>
+
+          <section id="compare">
+            <h2>Compare and Inspect</h2>
+            <div class="doc-grid">
+              <div class="doc-card">
+                <h3>Loupe</h3>
+                <p>Open a single photo with <code>E</code>, double-click, or <code>Enter</code>. Use fit through 400% zoom, the magnifier, the hand tool, and the metadata bar.</p>
+              </div>
+              <div class="doc-card">
+                <h3>Survey</h3>
+                <p>Select two or more photos, press <code>N</code>, and compare frames side by side with synced zoom and pan for focus checks and keeper selection.</p>
+              </div>
+            </div>
+            <p>Keywords are edited in the Loupe metadata bar. Add a keyword, press <code>Enter</code>, then use the filter bar to narrow the grid by keyword later.</p>
+          </section>
+
+          <section id="export">
+            <h2>Export, Delete, and Stay Safe</h2>
+            <p>Export writes new rendered files and never modifies originals. Select one or more photos, choose <strong>Export</strong>, pick JPEG, PNG, TIFF, or WebP, and choose a destination file or folder.</p>
+            <p>Press <code>Delete</code> or <code>Backspace</code> to move selected photo files to the macOS Trash. Use <strong>Delete N Rejects</strong> after marking rejects with <code>X</code> to clear a batch. Trash moves are recoverable until the Trash is emptied.</p>
+            <p>Most Proof actions are non-destructive. The commands that intentionally affect files on disk are moving photos, renaming photos, moving photos to Trash, and Fuji <code>.HIF</code> to <code>.HEIC</code> extension normalization during indexing or rescan.</p>
+          </section>
+
+          <section id="shortcuts">
+            <h2>Essential Shortcuts</h2>
+            <div class="kbd-grid">
+              <div class="kbd-item"><span>Grid</span><code>G</code></div>
+              <div class="kbd-item"><span>Loupe</span><code>E</code></div>
+              <div class="kbd-item"><span>Survey</span><code>N</code></div>
+              <div class="kbd-item"><span>Full-screen view</span><code>F</code></div>
+              <div class="kbd-item"><span>Select all visible photos</span><code>Command-A</code></div>
+              <div class="kbd-item"><span>Rename selected files</span><code>F2</code></div>
+              <div class="kbd-item"><span>Preferences</span><code>Command-,</code></div>
+              <div class="kbd-item"><span>Exit full-screen or clear selection</span><code>Esc</code></div>
+            </div>
+            <p>For the complete reference, including filtering, collections, cache maintenance, and troubleshooting, read the <a href="/manual/">User Manual</a>.</p>
+          </section>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 Erik Sawaya. All rights reserved.</p>
+        <nav aria-label="Footer links">
+          <a href="/">Home</a> &nbsp;·&nbsp;
+          <a href="/guide/">User Guide</a> &nbsp;·&nbsp;
+          <a href="/manual/">User Manual</a> &nbsp;·&nbsp;
+          <a href="/support/">Support</a> &nbsp;·&nbsp;
+          <a href="/privacy/">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.querySelector('.site-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    const toggle = document.getElementById('nav-toggle');
+    const links = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  </script>
+</body>
+</html>

@@ -17,6 +17,8 @@ const entries = [
   'assets',
   'privacy',
   'support',
+  'manual',
+  'guide',
 ];
 
 function copyEntry(source, destination) {

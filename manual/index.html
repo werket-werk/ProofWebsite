@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User Manual — Proof for Mac</title>
+  <meta name="description" content="The full Proof user manual covering system requirements, catalogs, folders, culling, filtering, Loupe, Survey, collections, export, preferences, cache maintenance, shortcuts, and troubleshooting.">
+  <link rel="canonical" href="https://www.proof-photo.com/manual/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="User Manual — Proof for Mac">
+  <meta property="og:description" content="The full Proof reference for catalogs, folders, culling, filtering, Loupe, Survey, collections, export, preferences, shortcuts, and troubleshooting.">
+  <meta property="og:url" content="https://www.proof-photo.com/manual/">
+  <meta property="og:image" content="https://www.proof-photo.com/assets/img/proof-banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="User Manual — Proof for Mac">
+  <meta name="twitter:description" content="The full Proof reference for catalogs, folders, culling, filtering, Loupe, Survey, collections, export, preferences, shortcuts, and troubleshooting.">
+  <meta name="twitter:image" content="https://www.proof-photo.com/assets/img/proof-banner.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" href="../assets/img/icon.png" type="image/png">
+</head>
+<body>
+  <header>
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container nav-inner">
+        <a href="/" class="nav-logo" aria-label="Proof home">
+          <img src="../assets/img/icon.png" alt="" aria-hidden="true" width="28" height="28">
+          <span>Proof</span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#screenshots">Screenshots</a></li>
+          <li><a href="/#develop">Develop</a></li>
+          <li><a href="/guide/">Guide</a></li>
+          <li><a href="/support/">Support</a></li>
+          <li><a href="/#download">Download</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <h1>User Manual</h1>
+        <p>The complete current reference for Proof catalogs, folder indexing, culling, selection, filters, Loupe, Survey, collections, keywords, export, preferences, and cache maintenance.</p>
+        <div class="doc-actions">
+          <a class="btn-primary" href="/guide/">Read quick guide</a>
+          <a class="btn-secondary" href="/support/">Contact support</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content doc-page">
+      <div class="doc-layout">
+        <aside class="doc-toc" aria-label="Manual contents">
+          <h2>Contents</h2>
+          <ol>
+            <li><a href="#requirements">Requirements</a></li>
+            <li><a href="#catalogs">Catalogs</a></li>
+            <li><a href="#folders">Folders</a></li>
+            <li><a href="#workspace">Workspace</a></li>
+            <li><a href="#selection">Selection</a></li>
+            <li><a href="#culling">Culling</a></li>
+            <li><a href="#filters">Filters</a></li>
+            <li><a href="#loupe">Loupe</a></li>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#files">File actions</a></li>
+            <li><a href="#export">Export</a></li>
+            <li><a href="#preferences">Preferences</a></li>
+            <li><a href="#cache">Cache</a></li>
+            <li><a href="#shortcuts">Shortcuts</a></li>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+          </ol>
+        </aside>
+
+        <article class="doc-copy">
+          <section id="requirements">
+            <h2>System Requirements</h2>
+            <p>Proof runs on macOS. The current universal build is intended for both Apple Silicon and Intel Macs.</p>
+            <p>Proof supports common photo formats including JPEG, PNG, TIFF, WebP, HEIF/HEIC, Fuji <code>.HIF</code>, and camera RAW formats such as RAF, CR2/CR3, NEF/NRW, ARW, DNG, ORF, RW2, and PEF.</p>
+            <p>Because Proof may be distributed outside the Mac App Store, macOS can show a first-open warning. Open the DMG, drag Proof into Applications, Control-click Proof, choose Open, then choose Open again in the warning dialog.</p>
+          </section>
+
+          <section id="catalogs">
+            <h2>Catalogs</h2>
+            <p>A catalog is Proof's local database for your library. It stores folder references, thumbnails, previews, ratings, flags, color labels, keywords, collections, and edit metadata.</p>
+            <p>Proof catalogs photos by reference. Your original files stay in their existing folders. Catalog work is separate from originals unless you use explicit file commands such as move, rename, export, or delete.</p>
+            <ul>
+              <li><strong>New Catalog:</strong> create a new <code>.proof</code> catalog.</li>
+              <li><strong>Open Catalog:</strong> open an existing Proof catalog.</li>
+              <li><strong>Catalog menu:</strong> switch catalogs, create another catalog, or reopen a recent catalog.</li>
+            </ul>
+          </section>
+
+          <section id="folders">
+            <h2>Adding and Syncing Folders</h2>
+            <p>Click <strong>Add Folder</strong> to choose a folder of photos. Proof indexes the folder and its subfolders, reads metadata, and generates thumbnails in the background.</p>
+            <p>The left sidebar includes All Photographs, added root folders, expandable subfolders, and offline or missing-state indicators when source folders or files are unavailable.</p>
+            <p>Use <strong>Rescan</strong> when files change outside Proof. A rescan adds newly found photos, refreshes metadata for changed photos, marks missing files, and preserves ratings, flags, keywords, collections, and edit metadata.</p>
+            <p>Right-click a folder for actions such as Reveal in Finder, Rescan, Locate folder, Rebuild Folder Thumbnails, Remove Missing, and Remove from Catalog. Removing a folder from the catalog does not delete files from disk.</p>
+          </section>
+
+          <section id="workspace">
+            <h2>Main Workspace</h2>
+            <table>
+              <thead>
+                <tr><th>View</th><th>Shortcut</th><th>Use</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Grid</td><td><code>G</code></td><td>Browse, select, filter, sort, organize, and cull thumbnails.</td></tr>
+                <tr><td>Loupe</td><td><code>E</code></td><td>Inspect one photo large, zoom, pan, review metadata, and add keywords.</td></tr>
+                <tr><td>Survey</td><td><code>N</code></td><td>Compare selected photos side by side.</td></tr>
+              </tbody>
+            </table>
+            <p>Press <code>F</code> to enter immersive full-screen photo view. Press <code>F</code> again or <code>Esc</code> to exit.</p>
+            <p>Grid is the main culling and organization view. Each thumbnail can show pick flag, reject flag, star rating, color label bar, and missing or loading state. Use the thumbnail-size slider in the filter bar to change grid density.</p>
+          </section>
+
+          <section id="selection">
+            <h2>Selecting Photos</h2>
+            <table>
+              <thead>
+                <tr><th>Action</th><th>How</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Select one photo</td><td>Click a thumbnail</td></tr>
+                <tr><td>Add or remove one photo</td><td><code>Command</code>-click</td></tr>
+                <tr><td>Select a range</td><td><code>Shift</code>-click</td></tr>
+                <tr><td>Extend with keyboard</td><td><code>Shift</code> + arrow keys</td></tr>
+                <tr><td>Select all visible photos</td><td><code>Command-A</code></td></tr>
+                <tr><td>Clear selection</td><td><code>Esc</code></td></tr>
+              </tbody>
+            </table>
+            <p>When a multi-selection exists, culling, export, rename, move, delete, collection, and rebuild-thumbnail actions target the whole selection.</p>
+          </section>
+
+          <section id="culling">
+            <h2>Culling</h2>
+            <p>Culling works from Grid, Loupe, and Survey.</p>
+            <table>
+              <thead>
+                <tr><th>Action</th><th>Shortcut</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Pick</td><td><code>P</code></td></tr>
+                <tr><td>Reject</td><td><code>X</code></td></tr>
+                <tr><td>Clear flag</td><td><code>U</code></td></tr>
+                <tr><td>Set rating</td><td><code>0</code> to <code>5</code></td></tr>
+                <tr><td>Red label</td><td><code>6</code></td></tr>
+                <tr><td>Yellow label</td><td><code>7</code></td></tr>
+                <tr><td>Green label</td><td><code>8</code></td></tr>
+                <tr><td>Blue label</td><td><code>9</code></td></tr>
+              </tbody>
+            </table>
+            <p>Enable Auto-advance in the filter bar or Preferences to move to the next photo after flagging, rating, or labeling. Auto-advance is disabled for batch selection operations.</p>
+          </section>
+
+          <section id="filters">
+            <h2>Filtering and Sorting</h2>
+            <p>The filter bar narrows the current photo set. Available filters include rating comparison modes, picks, rejects, color label, keyword, capture date range, camera model, and lens.</p>
+            <p>When filters are active, the count shows matched photos out of the current scope. Sort options include capture time, filename, and rating. Use the direction button next to the sort menu to switch ascending or descending order.</p>
+          </section>
+
+          <section id="loupe">
+            <h2>Loupe, Keywords, and Survey</h2>
+            <p>Loupe shows the current photo large with metadata, zoom controls, keywords, and a filmstrip. RAW and HEIF photos may take longer the first time they are opened because Proof decodes and caches a higher-quality preview.</p>
+            <table>
+              <thead>
+                <tr><th>Tool</th><th>Shortcut</th><th>Use</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Cursor</td><td><code>V</code></td><td>Standard viewing and selection.</td></tr>
+                <tr><td>Zoom</td><td><code>Z</code></td><td>Click to zoom at a point, click again to fit.</td></tr>
+                <tr><td>Hand</td><td><code>H</code></td><td>Drag to pan when zoomed.</td></tr>
+                <tr><td>Temporary Hand</td><td>Hold <code>Space</code></td><td>Temporarily pan without changing tools.</td></tr>
+              </tbody>
+            </table>
+            <p>Keywords are edited in the Loupe metadata bar. Add a keyword, press <code>Enter</code>, and later filter by keyword from the filter bar.</p>
+            <p>Survey compares the current Grid selection. Select two or more photos, press <code>N</code>, then use side-by-side comparison with synced zoom and pan for focus checks, expression choices, and selecting the keeper from a burst.</p>
+          </section>
+
+          <section id="collections">
+            <h2>Collections</h2>
+            <p>Collections are manual groupings of photos. They do not move files and they do not duplicate photos on disk.</p>
+            <p>Use collections for selects, client shortlists, delivery candidates, portfolio sets, or temporary working groups. Create collections in the sidebar, add selected thumbnails through the context menu or drag and drop, then select a collection to view only its photos.</p>
+            <p>Deleting a collection removes only the grouping. Photos and files remain in the catalog and on disk.</p>
+          </section>
+
+          <section id="files">
+            <h2>Moving, Renaming, and Revealing Files</h2>
+            <p>Proof is non-destructive by default, but some commands intentionally affect files on disk.</p>
+            <ul>
+              <li><strong>Reveal in Finder:</strong> show the original file or source folder.</li>
+              <li><strong>Drag out of Proof:</strong> drag thumbnails to Finder, browsers, mail, or other apps using original file paths.</li>
+              <li><strong>Move photos into folders:</strong> drag selected thumbnails onto a folder or subfolder in the sidebar. Proof asks for confirmation before moving originals.</li>
+              <li><strong>Rename photos:</strong> press <code>F2</code> or right-click and choose Rename. Patterns support <code>{name}</code>, <code>{n}</code>, and <code>{n:3}</code>.</li>
+            </ul>
+          </section>
+
+          <section id="export">
+            <h2>Exporting and Deleting</h2>
+            <p>Export writes new rendered files and does not modify originals. Select photos, choose Export, pick JPEG, PNG, TIFF, or WebP, and choose a destination file or folder.</p>
+            <p>For batch export, Proof writes one file per selected photo into the destination folder. Batch export can rename output files with the same <code>{name}</code>, <code>{n}</code>, and <code>{n:3}</code> pattern style used by batch rename.</p>
+            <p>Press <code>Delete</code> or <code>Backspace</code> to move selected photo files to the macOS Trash. Use <strong>Delete N Rejects</strong> after marking rejected photos with <code>X</code>. Missing-photo cleanup is separate and only removes dead catalog rows for files already gone from disk.</p>
+          </section>
+
+          <section id="preferences">
+            <h2>Preferences</h2>
+            <p>Open Preferences with <code>Command-,</code> or the macOS app menu. Preferences include appearance, default export format, default thumbnail size, default sort, auto-advance, Trash confirmation, default catalog location, automatic rescan, and preview cache controls.</p>
+          </section>
+
+          <section id="cache">
+            <h2>Preview Cache</h2>
+            <p>Proof stores thumbnails, previews, and higher-quality develop/export sources in the catalog cache so browsing and Loupe review stay fast.</p>
+            <p>The Preview Cache section in Preferences shows cache location, total size, thumbnail size, preview size, develop/export source size, database size, and orphaned cache files.</p>
+            <p>Cache actions include setting a cache limit, using quick presets, cleaning orphaned files, rebuilding thumbnails, and clearing selected cache types. Clearing cache files does not remove photos, ratings, flags, keywords, or collections.</p>
+          </section>
+
+          <section id="develop">
+            <h2>Develop Status</h2>
+            <div class="doc-callout">
+              <p><strong>Develop is hidden in the current release.</strong> RAW and HEIF photos still display in Loupe and Survey, and export infrastructure exists, but the Develop tab and <code>D</code> shortcut are not part of the visible current workflow.</p>
+            </div>
+            <p>If you see references to Develop in older material, treat them as work in progress unless the tab is visible in your build.</p>
+          </section>
+
+          <section id="shortcuts">
+            <h2>Keyboard Shortcuts</h2>
+            <div class="kbd-grid">
+              <div class="kbd-item"><span>Grid</span><code>G</code></div>
+              <div class="kbd-item"><span>Loupe</span><code>E</code></div>
+              <div class="kbd-item"><span>Survey</span><code>N</code></div>
+              <div class="kbd-item"><span>Full-screen photo view</span><code>F</code></div>
+              <div class="kbd-item"><span>Previous or next photo</span><code>Left / Right</code></div>
+              <div class="kbd-item"><span>Move up or down a grid row</span><code>Up / Down</code></div>
+              <div class="kbd-item"><span>Extend selection</span><code>Shift + arrows</code></div>
+              <div class="kbd-item"><span>Select all visible photos</span><code>Command-A</code></div>
+              <div class="kbd-item"><span>Pick</span><code>P</code></div>
+              <div class="kbd-item"><span>Reject</span><code>X</code></div>
+              <div class="kbd-item"><span>Clear flag</span><code>U</code></div>
+              <div class="kbd-item"><span>Set rating</span><code>0 to 5</code></div>
+              <div class="kbd-item"><span>Color labels</span><code>6 / 7 / 8 / 9</code></div>
+              <div class="kbd-item"><span>Rename selected files</span><code>F2</code></div>
+              <div class="kbd-item"><span>Move selected files to Trash</span><code>Delete</code></div>
+              <div class="kbd-item"><span>Preferences</span><code>Command-,</code></div>
+            </div>
+          </section>
+
+          <section id="troubleshooting">
+            <h2>Troubleshooting</h2>
+            <h3>Thumbnails are blank or shimmering</h3>
+            <p>Proof is still generating thumbnails. This is expected after adding a large folder or rebuilding cache.</p>
+            <h3>A folder is offline</h3>
+            <p>The source folder or drive is not currently available. Reconnect the drive, then right-click the folder and choose Locate folder if the path changed.</p>
+            <h3>Photos show as missing</h3>
+            <p>The files were moved, renamed, or deleted outside Proof. Run Rescan on the folder. If the files are gone permanently, use Remove Missing to clear the catalog rows.</p>
+            <h3>RAW or HEIF files open slowly the first time</h3>
+            <p>Proof is decoding and caching a higher-quality preview. Opening the same file again should be faster.</p>
+            <h3>Filters hide photos unexpectedly</h3>
+            <p>Check rating, pick/reject, label, keyword, date, camera, and lens filters in the filter bar. Clear active filters to return to the full current scope.</p>
+            <h3>Export fails</h3>
+            <p>Choose a writable destination and avoid exporting directly over an original source file. For batch export, choose a folder where Proof can create new files.</p>
+            <h3>Cache is using too much disk space</h3>
+            <p>Open Preferences, set a cache limit, clean orphaned files, or clear selected cache types. Proof regenerates cache files when needed.</p>
+            <div class="doc-callout">
+              <p>Proof is designed around non-destructive catalog work. Keep normal backups of both your photo library and your Proof catalog. Proof is provided as-is, without warranty.</p>
+            </div>
+          </section>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 Erik Sawaya. All rights reserved.</p>
+        <nav aria-label="Footer links">
+          <a href="/">Home</a> &nbsp;·&nbsp;
+          <a href="/guide/">User Guide</a> &nbsp;·&nbsp;
+          <a href="/manual/">User Manual</a> &nbsp;·&nbsp;
+          <a href="/support/">Support</a> &nbsp;·&nbsp;
+          <a href="/privacy/">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.querySelector('.site-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    const toggle = document.getElementById('nav-toggle');
+    const links = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  </script>
+</body>
+</html>
