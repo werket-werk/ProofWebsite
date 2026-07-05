@@ -3,6 +3,7 @@
   --bg: #0a0a0a;
   --surface: #141414;
   --border: #222;
+  --section-band-bg: linear-gradient(180deg, rgba(255,255,255,0.018), rgba(255,255,255,0.01));
   --accent: #3b82f6;
   --accent-hover: #2563eb;
   --text: #f0f0f0;
@@ -246,6 +247,30 @@ a:hover { text-decoration: underline; }
 
 /* ── Sections ── */
 section { padding: 96px 0; }
+.section-band {
+  background: var(--section-band-bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+#screenshots,
+#develop,
+#workflow,
+#privacy {
+  background: var(--section-band-bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+#features,
+#demo,
+#users,
+#download {
+  position: relative;
+}
+#demo,
+#users,
+#download {
+  border-top: 1px solid rgba(255,255,255,0.02);
+}
 .section-label {
   display: inline-block;
   color: var(--accent);
@@ -357,9 +382,7 @@ section { padding: 96px 0; }
 
 /* ── Workflow ── */
 #workflow {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  background: var(--section-band-bg);
 }
 .workflow-steps {
   display: grid;
