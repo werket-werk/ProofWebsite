@@ -189,7 +189,13 @@ a:hover { text-decoration: underline; }
   text-decoration: none;
   transform: translateY(-1px);
 }
-.btn-primary svg { width: 20px; height: 20px; }
+.btn-primary svg,
+.btn-primary img {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: block;
+}
 .btn-secondary {
   color: var(--text-secondary);
   font-size: 0.95rem;
