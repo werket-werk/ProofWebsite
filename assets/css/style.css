@@ -825,6 +825,23 @@ body.lightbox-open {
   font-size: 0.9em;
   font-family: 'SF Mono', 'Fira Code', monospace;
 }
+.page-content pre {
+  overflow-x: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  margin: 20px 0 28px;
+  -webkit-overflow-scrolling: touch;
+}
+.page-content pre code {
+  display: block;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: var(--text);
+  line-height: 1.6;
+}
 .page-content ul,
 .page-content ol {
   color: var(--text-secondary);

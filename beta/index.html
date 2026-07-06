@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beta &amp; Contributions — Proof for Mac</title>
+  <meta name="description" content="Proof is in beta development and currently free to download. Optional pay-what-you-want contributions support development and are non-refundable except where required by law.">
+  <link rel="canonical" href="https://www.proof-photo.com/beta/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Beta &amp; Contributions — Proof for Mac">
+  <meta property="og:description" content="Proof is in beta development and currently free to download. Optional contributions help support continued development.">
+  <meta property="og:url" content="https://www.proof-photo.com/beta/">
+  <meta property="og:image" content="https://www.proof-photo.com/assets/img/icon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Beta &amp; Contributions — Proof for Mac">
+  <meta name="twitter:description" content="Proof is in beta development and currently free to download. Optional contributions help support continued development.">
+  <meta name="twitter:image" content="https://www.proof-photo.com/assets/img/icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" href="../assets/img/icon.png" type="image/png">
+</head>
+<body>
+  <header>
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container nav-inner">
+        <a href="/" class="nav-logo" aria-label="Proof home">
+          <img src="../assets/img/icon.png" alt="" aria-hidden="true" width="28" height="28">
+          <span>Proof</span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#screenshots">Screenshots</a></li>
+          <li><a href="/#develop">Develop</a></li>
+          <li><a href="/guide/">Guide</a></li>
+          <li><a href="/support/">Support</a></li>
+          <li><a href="/#download">Download</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <h1>Beta &amp; Contributions</h1>
+        <p>Proof is in active beta development and currently free to download. Optional pay-what-you-want contributions help support the work.</p>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <h2>Proof Is In Beta</h2>
+      <p>Proof is usable today, but it is still being actively developed. That means parts of the workflow may change, bugs may appear, and some planned features are still being refined before they become part of the stable app experience.</p>
+      <p>The current beta is focused on fast local photo culling, folder-based library work, ratings, flags, labels, comparison views, local catalog data, and non-destructive exports. Future releases may change behavior as the product improves.</p>
+
+      <h2>Free To Download</h2>
+      <p>During beta, Proof can be downloaded for free. You do not need to pay to try it, test it with your own photo folders, or decide whether it fits your workflow.</p>
+      <p>If you are evaluating Proof for production work, keep normal backups of your photo library and catalog. Beta software should be treated with the same caution as any actively changing tool.</p>
+
+      <h2>Pay What You Want</h2>
+      <p>The download page may offer a pay-what-you-want option. Contributions are optional and appreciated. They help support continued development, testing, signing, distribution, and the time required to improve the app.</p>
+      <p>A contribution is not required to unlock the beta, and it is not a purchase of a guaranteed feature set, support plan, or future version. Choose <code>$0</code> if you want to download the beta for free.</p>
+
+      <h2>No Refunds</h2>
+      <p>Because Proof is available as a free beta and any payment is a voluntary contribution, contributions are final and non-refundable except where required by law.</p>
+      <p>Please only contribute if you are comfortable supporting the project as it exists today. If you are unsure, download the beta for free first and contribute later if Proof is useful to you.</p>
+
+      <h2>Feedback Helps</h2>
+      <p>Bug reports, workflow notes, and clear reproduction steps are useful during beta development. Use the <a href="/support/#contact">support form</a> to send feedback, especially if you can include your macOS version, camera/file type, and what you were doing when an issue appeared.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 Erik Sawaya. All rights reserved.</p>
+        <nav aria-label="Footer links">
+          <a href="/">Home</a> &nbsp;·&nbsp;
+          <a href="/guide/">User Guide</a> &nbsp;·&nbsp;
+          <a href="/manual/">User Manual</a> &nbsp;·&nbsp;
+          <a href="/beta/">Beta &amp; Contributions</a> &nbsp;·&nbsp;
+          <a href="/support/">Support</a> &nbsp;·&nbsp;
+          <a href="/trust/">Security &amp; Trust</a> &nbsp;·&nbsp;
+          <a href="/privacy/">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.querySelector('.site-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    const toggle = document.getElementById('nav-toggle');
+    const links = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security &amp; Trust — Proof for Mac</title>
+  <meta name="description" content="Learn how Proof for Mac is signed, notarized, local-first, and verifiable. See what Proof can access and how to verify the app yourself.">
+  <link rel="canonical" href="https://www.proof-photo.com/trust/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Security &amp; Trust — Proof for Mac">
+  <meta property="og:description" content="Proof is signed, notarized, local-first, and verifiable. Learn what Proof can access and how to check it yourself.">
+  <meta property="og:url" content="https://www.proof-photo.com/trust/">
+  <meta property="og:image" content="https://www.proof-photo.com/assets/img/icon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Security &amp; Trust — Proof for Mac">
+  <meta name="twitter:description" content="Proof is signed, notarized, local-first, and verifiable. Learn what Proof can access and how to check it yourself.">
+  <meta name="twitter:image" content="https://www.proof-photo.com/assets/img/icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" href="../assets/img/icon.png" type="image/png">
+</head>
+<body>
+  <header>
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container nav-inner">
+        <a href="/" class="nav-logo" aria-label="Proof home">
+          <img src="../assets/img/icon.png" alt="" aria-hidden="true" width="28" height="28">
+          <span>Proof</span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#screenshots">Screenshots</a></li>
+          <li><a href="/#develop">Develop</a></li>
+          <li><a href="/guide/">Guide</a></li>
+          <li><a href="/support/">Support</a></li>
+          <li><a href="/#download">Download</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <h1>Security &amp; Trust</h1>
+        <p>Proof is a closed-source app in beta development, but closed-source does not mean unverifiable. This page explains what macOS can verify, what Proof can access, and what stays local.</p>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <h2>The Short Version</h2>
+      <ul>
+        <li><strong>Signed and notarized by Apple.</strong> Proof is code-signed with a verified Apple Developer ID and notarized by Apple, which means Apple scanned the exact binary you downloaded for malware.</li>
+        <li><strong>A real, named developer.</strong> Proof is published by Erik Sawaya under Apple Developer Team ID <code>225KXPVW4C</code>, tied to a legally verified Apple developer account.</li>
+        <li><strong>Your photos never leave your Mac.</strong> Proof reads and edits the image files you point it at on your own disk. It does not upload your photos, catalog, edits, metadata, or file paths.</li>
+        <li><strong>One internet connection: update checks.</strong> On launch, Proof asks GitHub whether a newer version exists. Proof does not include analytics, telemetry, tracking, advertising, or cloud sync.</li>
+      </ul>
+
+      <h2>What Apple's Notarization Guarantees</h2>
+      <p>Notarization is Apple's trust mechanism for Mac software distributed outside the Mac App Store. Before release, the Proof binary is uploaded to Apple, checked against a valid paid Apple Developer ID, scanned for malware, and issued a notarization ticket.</p>
+      <p>Your Mac checks that ticket the first time you open Proof. If the app has been changed after signing, even by a single byte, the signature breaks and macOS refuses to launch it. This is the same mechanism used by many paid, closed-source Mac apps.</p>
+
+      <h2>Verify It Yourself</h2>
+      <p>You do not have to take our word for it. Open Terminal and run:</p>
+      <pre><code>spctl -a -t exec -vv /Applications/Proof.app
+codesign -dvv /Applications/Proof.app
+stapler validate /Applications/Proof.app</code></pre>
+      <p>The first command should report that Gatekeeper accepts the app from a notarized Developer ID. The second command shows the signing identity and Team ID <code>225KXPVW4C</code>. The third confirms the notarization ticket is stapled to the app.</p>
+
+      <h2>What Proof Can Access</h2>
+      <p>Proof runs without the App Store sandbox. That is deliberate: a photo tool needs to read the folders you choose, and Proof uses standard macOS tools already on your system, including <code>sips</code> for image conversion and <code>exiftool</code> if you have it installed, to read camera metadata and handle RAW or HEIF files.</p>
+      <p>Running unsandboxed means Proof can read files on your disk, like other desktop photo editors. The important question is what Proof actually does with that access.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Proof does</th>
+            <th>Proof does not</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Read the image folders you open</td>
+            <td>Upload, sync, or back up your photos anywhere</td>
+          </tr>
+          <tr>
+            <td>Write thumbnails and previews to a local cache</td>
+            <td>Send your catalog or edits to any server</td>
+          </tr>
+          <tr>
+            <td>Read camera metadata, including EXIF and film simulation details</td>
+            <td>Collect analytics, telemetry, or usage tracking</td>
+          </tr>
+          <tr>
+            <td>Check GitHub once on launch for app updates</td>
+            <td>Contact ad networks, trackers, or cloud photo services</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Local Cache Locations</h2>
+      <p>You can inspect or delete Proof's local catalog and thumbnail cache at any time:</p>
+      <ul>
+        <li>Catalog: <code>~/Library/Application Support/com.werket.proof/</code></li>
+        <li>Thumbnails: <code>~/Library/Caches/com.werket.proof/</code></li>
+      </ul>
+
+      <h2>The One Network Connection</h2>
+      <p>On launch, Proof checks whether a newer version is available by fetching a small public manifest from GitHub:</p>
+      <pre><code>https://github.com/werket-werk/proof-releases/releases/latest/download/latest.json</code></pre>
+      <p>This is the standard Tauri auto-updater. Any update offered through that channel is cryptographically signed with a key held by the developer, and Proof verifies the update signature before installing it.</p>
+      <p>You can watch this with a network monitor such as Little Snitch or macOS firewall tooling. You should see a GitHub connection on startup and no analytics, telemetry, tracking, advertising, or cloud sync traffic.</p>
+
+      <h2>Why Proof Is Not Open Source</h2>
+      <p>Proof is an independent product in beta development, and the source code is part of the product's intellectual property. That is the same position as many closed-source Mac apps.</p>
+      <p>What Proof publishes instead is the trust surface that matters for safety: a verified developer identity, Apple notarization, a signed and tamper-evident update channel, a local-first data model, and commands anyone can run to verify the app on their own Mac.</p>
+
+      <h2>Questions</h2>
+      <p>If this page does not answer a security or privacy concern, use the <a href="/support/#contact">support form</a> or contact <a href="mailto:hello@lunero.com.au">hello@lunero.com.au</a>.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 Erik Sawaya. All rights reserved.</p>
+        <nav aria-label="Footer links">
+          <a href="/">Home</a> &nbsp;·&nbsp;
+          <a href="/guide/">User Guide</a> &nbsp;·&nbsp;
+          <a href="/manual/">User Manual</a> &nbsp;·&nbsp;
+          <a href="/beta/">Beta &amp; Contributions</a> &nbsp;·&nbsp;
+          <a href="/support/">Support</a> &nbsp;·&nbsp;
+          <a href="/trust/">Security &amp; Trust</a> &nbsp;·&nbsp;
+          <a href="/privacy/">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.querySelector('.site-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    const toggle = document.getElementById('nav-toggle');
+    const links = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  </script>
+</body>
+</html>

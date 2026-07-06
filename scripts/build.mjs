@@ -16,6 +16,8 @@ const entries = [
   '_redirects',
   'assets',
   'privacy',
+  'trust',
+  'beta',
   'support',
   'manual',
   'guide',
