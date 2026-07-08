@@ -278,6 +278,7 @@ section > .container {
 #screenshots,
 #develop,
 #workflow,
+#workflows,
 #privacy {
   border-top: 1px solid var(--blade-line);
   border-bottom: 1px solid rgba(255,255,255,0.055);
@@ -292,6 +293,11 @@ section > .container {
 #users,
 #download {
   border-top: 1px solid rgba(255,255,255,0.035);
+}
+#workflows {
+  background:
+    linear-gradient(135deg, rgba(59,130,246,0.08), transparent 30%),
+    linear-gradient(180deg, #101113 0%, #0c0d0e 100%);
 }
 #features {
   background:
@@ -386,6 +392,7 @@ section > .container {
 
 #features,
 #workflow,
+#workflows,
 #users,
 #privacy {
   padding: 72px 0;
@@ -487,6 +494,20 @@ section > .container {
   color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.6;
+}
+.feature-card-link,
+.doc-card-link {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+}
+.feature-card-link:hover,
+.doc-card-link:hover {
+  text-decoration: none;
+}
+.workflow-link-grid {
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 36px;
 }
 .feature-grid-compact {
   grid-template-columns: repeat(5, 1fr);
@@ -930,6 +951,11 @@ body.lightbox-open {
   padding-bottom: 12px;
   border-bottom: 1px solid var(--border);
 }
+.page-content h3 {
+  font-size: 1.02rem;
+  font-weight: 600;
+  margin: 24px 0 10px;
+}
 .page-content p {
   color: var(--text-secondary);
   line-height: 1.75;
@@ -1071,11 +1097,23 @@ body.lightbox-open {
 }
 .doc-card h3 {
   font-size: 1rem;
-  margin-bottom: 8px;
+  margin: 0 0 8px;
 }
 .doc-card p {
   margin-bottom: 0;
   font-size: 0.95rem;
+}
+.seo-page {
+  max-width: 960px;
+}
+.page-image {
+  width: 100%;
+  aspect-ratio: 3106 / 2116;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  margin-bottom: 42px;
 }
 .kbd-grid {
   display: grid;
@@ -1229,7 +1267,8 @@ details p {
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .feature-grid-compact,
-  .audience-grid {
+  .audience-grid,
+  .workflow-link-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .workflow-cards-compact {
@@ -1292,6 +1331,7 @@ details p {
   section { padding: 64px 0; }
   #features,
   #workflow,
+  #workflows,
   #users,
   #privacy {
     padding: 56px 0;
@@ -1299,5 +1339,6 @@ details p {
 }
 @media (max-width: 480px) {
   .workflow-cards { grid-template-columns: 1fr; }
+  .workflow-link-grid { grid-template-columns: 1fr; }
   .footer-links { flex-direction: column; gap: 24px; }
 }

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Release Notes — Proof for Mac</title>
+  <meta name="description" content="Read the latest Proof for Mac release notes, including stability improvements, fixes, update support, and earlier beta changes.">
+  <link rel="canonical" href="https://www.proof-photo.com/release-notes/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Release Notes — Proof for Mac">
+  <meta property="og:description" content="Latest Proof for Mac updates, fixes, reliability improvements, and beta development notes.">
+  <meta property="og:url" content="https://www.proof-photo.com/release-notes/">
+  <meta property="og:image" content="https://www.proof-photo.com/assets/img/icon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Release Notes — Proof for Mac">
+  <meta name="twitter:description" content="Latest Proof for Mac updates, fixes, reliability improvements, and beta development notes.">
+  <meta name="twitter:image" content="https://www.proof-photo.com/assets/img/icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" href="../assets/img/icon.png" type="image/png">
+</head>
+<body>
+  <header>
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container nav-inner">
+        <a href="/" class="nav-logo" aria-label="Proof home">
+          <img src="../assets/img/icon.png" alt="" aria-hidden="true" width="28" height="28">
+          <span>Proof</span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#screenshots">Screenshots</a></li>
+          <li><a href="/#develop">Develop</a></li>
+          <li><a href="/guide/">Guide</a></li>
+          <li><a href="/support/">Support</a></li>
+          <li><a href="/#download">Download</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <h1>Release Notes</h1>
+        <p>All notable changes to Proof are documented here. Newest releases first.</p>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <h2>0.3.3</h2>
+      <h3>Improvements</h3>
+      <ul>
+        <li><strong>Opens maximized.</strong> Proof now launches filling the screen, like Lightroom, instead of a small centered window.</li>
+        <li><strong>Loupe layout fix.</strong> Scrolling the filmstrip no longer drags the sidebar and toolbar off-screen; the filmstrip scrolls on its own.</li>
+      </ul>
+      <h3>Reliability &amp; safety</h3>
+      <ul>
+        <li><strong>Safer file deletion.</strong> Trash and cache-cleanup operations now verify a file lives inside a known catalog folder before touching it, so a corrupt or shared catalog can't cause unrelated files to be removed.</li>
+        <li><strong>Hardened folder operations.</strong> Moving photos and creating subfolders now reject path names that try to escape the target folder.</li>
+        <li><strong>Correct thumbnail refresh.</strong> Switching catalogs or filters no longer leaves some thumbnails permanently blank.</li>
+      </ul>
+      <h3>Under the hood</h3>
+      <ul>
+        <li>Cleared all Clippy lints so the continuous-integration gate passes.</li>
+        <li>Removed developer-only Camera Develop / Probe controls from the shipping UI.</li>
+      </ul>
+      <h2>0.3.2</h2>
+      <h3>Stability &amp; reliability</h3>
+      <ul>
+        <li><strong>Recover from graphics context loss.</strong> If macOS reclaims the GPU (common under memory pressure while scrubbing large RAW files), the Develop/loupe view now rebuilds itself and re-loads the current image instead of freezing on a dead canvas.</li>
+        <li><strong>No more white-screen crashes.</strong> A top-level error boundary catches unexpected UI errors and offers a reload, keeping your catalog safe (it lives in the database, so a reload never loses work).</li>
+        <li><strong>Persistent logs.</strong> Proof now writes a diagnostic log to <code>~/Library/Logs/Proof/proof.log</code>, including any crash details, so problems can be diagnosed after the fact.</li>
+        <li><strong>Sturdier internals.</strong> Removed lock-poisoning failure modes that could cascade one error into repeated failures, and the folder watcher no longer aborts startup if the OS is under resource pressure.</li>
+      </ul>
+      <h3>Fixes</h3>
+      <ul>
+        <li><strong>Drag-to-move now works with camera-locked files.</strong> Files carrying the macOS immutable (<code>uchg</code>) flag — set by some cameras and backup tools — could fail to move with &quot;Operation not permitted (os error 1)&quot;. Proof now clears the flag and retries, so the move completes.</li>
+        <li><strong>Drag preview is the right size.</strong> Dragging photos onto a sidebar folder now shows a small thumbnail under the cursor instead of a full-size image, and internal drops register reliably (the drag state is now cleared when the drag actually ends, not when it starts).</li>
+        <li><strong>Consistent moves on failure.</strong> If a file move can't be committed to the catalog, the moved files are reverted so disk and catalog never disagree.</li>
+      </ul>
+      <h3>Under the hood</h3>
+      <ul>
+        <li>Continuous integration: every change now runs the Rust test suite, Clippy, and a frontend build automatically.</li>
+      </ul>
+      <h2>0.3.1</h2>
+      <ul>
+        <li>Auto-updater points at the public releases feed so existing owners update automatically.</li>
+      </ul>
+      <h2>0.3.0</h2>
+      <ul>
+        <li>Signing, notarization, and auto-updater support for a shippable, Gatekeeper-approved app.</li>
+        <li>Loupe cache and Survey/loupe UX improvements.</li>
+        <li>Selection-based Survey comparison with synced zoom.</li>
+      </ul>
+      <h2>0.2.x and earlier</h2>
+      <ul>
+        <li>RAW + high-bit-depth HEIF develop (linear-ProPhoto pixel engine).</li>
+        <li>Non-destructive offline/missing folder handling with a live folder watcher.</li>
+        <li>Cataloging overhaul for culling speed and scale; folder tree, file moves, rename, drag-to-folder.</li>
+        <li>Color grading, masks, star ratings, filtering, multi-format export.</li>
+        <li>Preferences, context menus, full-screen loupe, hold-Space to pan.</li>
+        <li>New &quot;P&quot; logo and cream accent rebrand.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 Erik Sawaya. All rights reserved.</p>
+        <nav aria-label="Footer links">
+          <a href="/">Home</a> &nbsp;·&nbsp;
+          <a href="/photo-culling-app/">Photo Culling App</a> &nbsp;·&nbsp;
+          <a href="/local-photo-library/">Local Photo Library</a> &nbsp;·&nbsp;
+          <a href="/fujifilm-hif-to-heic/">Fujifilm HIF to HEIC</a> &nbsp;·&nbsp;
+          <a href="/guide/">User Guide</a> &nbsp;·&nbsp;
+          <a href="/manual/">User Manual</a> &nbsp;·&nbsp;
+          <a href="/beta/">Beta &amp; Contributions</a> &nbsp;·&nbsp;
+          <a href="/release-notes/">Release Notes</a> &nbsp;·&nbsp;
+          <a href="/support/">Support</a> &nbsp;·&nbsp;
+          <a href="/trust/">Security &amp; Trust</a> &nbsp;·&nbsp;
+          <a href="/privacy/">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.querySelector('.site-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    const toggle = document.getElementById('nav-toggle');
+    const links = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  </script>
+</body>
+</html>

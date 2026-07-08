@@ -15,6 +15,54 @@
   <meta name="twitter:title" content="Support — Proof for Mac">
   <meta name="twitter:description" content="Get help with Proof, the Mac photo culling app.">
   <meta name="twitter:image" content="https://www.proof-photo.com/assets/img/icon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where does Proof store my photos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Proof references the folders you choose instead of copying everything into a separate cloud library. Your originals stay in place on disk."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is my catalog stored?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your catalog is stored in a SQLite database at ~/Library/Application Support/Proof/. Back it up like any other important file."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I delete rejected photos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mark shots as Rejected with the X key, then press Backspace or Delete. Proof moves rejected photos to the macOS Trash."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Proof work without an internet connection?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. No internet connection is required for core workflow features. On launch, Proof may contact GitHub to check whether a newer version is available."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Proof signed, notarized, and safe to run?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Proof is signed with a verified Apple Developer ID, notarized by Apple, and distributed through a tamper-evident update channel."
+        }
+      }
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="icon" href="../assets/img/icon.png" type="image/png">
 </head>
@@ -136,6 +184,11 @@
         </details>
 
         <details>
+          <summary>Where can I see what changed?</summary>
+          <p>Read the <a href="/release-notes/">Release Notes</a> for the newest Proof updates, fixes, and under-the-hood changes.</p>
+        </details>
+
+        <details>
           <summary>How do I report a bug?</summary>
           <p>Use the contact form above and include your macOS version plus a short description of what happened.</p>
         </details>
@@ -149,9 +202,13 @@
         <p>© 2026 Erik Sawaya. All rights reserved.</p>
         <nav aria-label="Footer links">
           <a href="/">Home</a> &nbsp;·&nbsp;
+          <a href="/photo-culling-app/">Photo Culling App</a> &nbsp;·&nbsp;
+          <a href="/local-photo-library/">Local Photo Library</a> &nbsp;·&nbsp;
+          <a href="/fujifilm-hif-to-heic/">Fujifilm HIF to HEIC</a> &nbsp;·&nbsp;
           <a href="/guide/">User Guide</a> &nbsp;·&nbsp;
           <a href="/manual/">User Manual</a> &nbsp;·&nbsp;
           <a href="/beta/">Beta &amp; Contributions</a> &nbsp;·&nbsp;
+          <a href="/release-notes/">Release Notes</a> &nbsp;·&nbsp;
           <a href="/support/">Support</a> &nbsp;·&nbsp;
           <a href="/trust/">Security &amp; Trust</a> &nbsp;·&nbsp;
           <a href="/privacy/">Privacy Policy</a>

@@ -19,12 +19,35 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Proof",
-    "operatingSystem": "macOS",
-    "applicationCategory": "MultimediaApplication",
-    "description": "Proof is a fast, non-destructive photo library and culling app for Mac photographers.",
-    "url": "https://www.proof-photo.com/"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.proof-photo.com/#website",
+        "url": "https://www.proof-photo.com/",
+        "name": "Proof",
+        "description": "Fast, non-destructive photo culling for Mac."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://www.proof-photo.com/#app",
+        "name": "Proof",
+        "operatingSystem": "macOS",
+        "applicationCategory": "MultimediaApplication",
+        "description": "Proof is a fast, non-destructive photo library and culling app for Mac photographers.",
+        "url": "https://www.proof-photo.com/",
+        "image": "https://www.proof-photo.com/assets/img/icon.png",
+        "downloadUrl": "http://store.proof-photo.com",
+        "offers": {
+          "@type": "Offer",
+          "price": 0,
+          "availability": "https://schema.org/InStock"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Erik Sawaya"
+        }
+      }
+    ]
   }
   </script>
   <link rel="stylesheet" href="assets/css/style.css?v=20260706-aperture-gray-sections">
@@ -112,6 +135,32 @@
             <h3>Auto-convert Fujifilm HIF imports to HEIC</h3>
             <p>Convert Fuji .HIF files during USB import.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="workflows">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Workflows</span>
+          <h2 class="section-title">Focused Mac photo workflows</h2>
+          <p class="section-sub">
+            Practical pages for the search intents Proof can answer today.
+          </p>
+        </div>
+        <div class="features-grid workflow-link-grid">
+          <a class="feature-card feature-card-link" href="/photo-culling-app/">
+            <h3>Photo culling app for Mac</h3>
+            <p>Review large shoots with folders, flags, ratings, Loupe, Survey, and safe exports.</p>
+          </a>
+          <a class="feature-card feature-card-link" href="/local-photo-library/">
+            <h3>Local photo library</h3>
+            <p>Keep originals, catalog data, thumbnails, and previews on your Mac.</p>
+          </a>
+          <a class="feature-card feature-card-link" href="/fujifilm-hif-to-heic/">
+            <h3>Fujifilm HIF to HEIC</h3>
+            <p>Work with Fujifilm HIF files and film simulation metadata in a Mac culling workflow.</p>
+          </a>
         </div>
       </div>
     </section>
@@ -339,7 +388,16 @@
               <li><a href="/guide/">User Guide</a></li>
               <li><a href="/manual/">User Manual</a></li>
               <li><a href="/beta/">Beta &amp; Contributions</a></li>
+              <li><a href="/release-notes/">Release Notes</a></li>
               <li><a href="#download">Download</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Workflows</h4>
+            <ul>
+              <li><a href="/photo-culling-app/">Photo Culling App</a></li>
+              <li><a href="/local-photo-library/">Local Photo Library</a></li>
+              <li><a href="/fujifilm-hif-to-heic/">Fujifilm HIF to HEIC</a></li>
             </ul>
           </div>
           <div class="footer-col">

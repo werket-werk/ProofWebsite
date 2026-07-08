@@ -1,0 +1,47 @@
+name: Sync release notes
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 * * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+
+      - name: Check out Proof changelog source
+        uses: actions/checkout@v4
+        with:
+          repository: werket-werk/Proof
+          path: proof-source
+          token: ${{ secrets.PROOF_REPO_TOKEN }}
+          persist-credentials: false
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate release notes from Proof changelog
+        env:
+          PROOF_CHANGELOG_PATH: proof-source/CHANGELOG.md
+        run: npm run generate:release-notes
+
+      - name: Commit release notes if changed
+        run: |
+          if git diff --quiet -- release-notes/index.html; then
+            echo "Release notes are already current."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add release-notes/index.html
+          git commit -m "Update release notes from Proof changelog"
+          git push

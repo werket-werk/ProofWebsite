@@ -3,6 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "build": "node scripts/build.mjs"
+    "generate:release-notes": "node scripts/generate-release-notes.mjs",
+    "build": "npm run generate:release-notes && node scripts/build.mjs"
   }
 }
