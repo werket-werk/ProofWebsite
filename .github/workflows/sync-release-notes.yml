@@ -21,7 +21,7 @@ jobs:
           PROOF_REPO_TOKEN: ${{ secrets.PROOF_REPO_TOKEN }}
         run: |
           if [ -z "$PROOF_REPO_TOKEN" ]; then
-            echo "::notice title=Release notes sync skipped::Set the PROOF_REPO_TOKEN repository secret to enable changelog sync from werket-werk/Proof."
+            echo "Release notes sync skipped. Set the PROOF_REPO_TOKEN repository secret to enable changelog sync from werket-werk/Proof."
             echo "available=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
