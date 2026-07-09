@@ -13,10 +13,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out website
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+
+      - name: Check Proof repo token
+        id: proof-token
+        env:
+          PROOF_REPO_TOKEN: ${{ secrets.PROOF_REPO_TOKEN }}
+        run: |
+          if [ -z "$PROOF_REPO_TOKEN" ]; then
+            echo "::notice title=Release notes sync skipped::Set the PROOF_REPO_TOKEN repository secret to enable changelog sync from werket-werk/Proof."
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "available=true" >> "$GITHUB_OUTPUT"
 
       - name: Check out Proof changelog source
-        uses: actions/checkout@v4
+        if: steps.proof-token.outputs.available == 'true'
+        uses: actions/checkout@v7
         with:
           repository: werket-werk/Proof
           path: proof-source
@@ -24,16 +38,20 @@ jobs:
           persist-credentials: false
 
       - name: Set up Node
-        uses: actions/setup-node@v4
+        if: steps.proof-token.outputs.available == 'true'
+        uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 24
+          package-manager-cache: false
 
       - name: Generate release notes from Proof changelog
+        if: steps.proof-token.outputs.available == 'true'
         env:
           PROOF_CHANGELOG_PATH: proof-source/CHANGELOG.md
         run: npm run generate:release-notes
 
       - name: Commit release notes if changed
+        if: steps.proof-token.outputs.available == 'true'
         run: |
           if git diff --quiet -- release-notes/index.html; then
             echo "Release notes are already current."
