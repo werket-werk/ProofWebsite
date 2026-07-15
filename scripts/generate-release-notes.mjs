@@ -7,11 +7,9 @@ const projectRoot = dirname(scriptDir);
 const outputPath = join(projectRoot, 'release-notes', 'index.html');
 const rawChangelogUrl = process.env.PROOF_CHANGELOG_URL || 'https://raw.githubusercontent.com/werket-werk/Proof/main/CHANGELOG.md';
 
-const changelogCandidates = [
-  process.env.PROOF_CHANGELOG_PATH,
-  join(projectRoot, '..', 'Proof', 'CHANGELOG.md'),
-  '/Users/eriksawaya/Desktop/Proof/CHANGELOG.md',
-].filter(Boolean);
+const changelogCandidates = process.env.PROOF_CHANGELOG_PATH
+  ? [process.env.PROOF_CHANGELOG_PATH]
+  : [join(projectRoot, '..', 'Proof', 'CHANGELOG.md')];
 
 function escapeHtml(value) {
   return value
@@ -120,15 +118,24 @@ async function readChangelog() {
     }
   }
 
-  const response = await fetch(rawChangelogUrl);
-  if (!response.ok) {
-    throw new Error(`Could not fetch ${rawChangelogUrl}: ${response.status} ${response.statusText}`);
-  }
+  try {
+    const response = await fetch(rawChangelogUrl);
+    if (!response.ok) {
+      throw new Error(`${response.status} ${response.statusText}`);
+    }
 
-  return {
-    markdown: await response.text(),
-    source: rawChangelogUrl,
-  };
+    return {
+      markdown: await response.text(),
+      source: rawChangelogUrl,
+    };
+  } catch (error) {
+    if (existsSync(outputPath)) {
+      console.log(`Release notes source unavailable (${error.message}); using existing ${outputPath}`);
+      return null;
+    }
+
+    throw new Error(`Could not fetch ${rawChangelogUrl}: ${error.message}`);
+  }
 }
 
 function pageTemplate({ intro, bodyHtml }) {
@@ -227,10 +234,13 @@ ${bodyHtml}
 `;
 }
 
-const { markdown, source } = await readChangelog();
-const { intro, introLineIndex } = extractIntro(markdown);
-const bodyHtml = markdownToHtml(markdown, { skipLineIndex: introLineIndex });
+const changelog = await readChangelog();
 
-mkdirSync(dirname(outputPath), { recursive: true });
-writeFileSync(outputPath, pageTemplate({ intro, bodyHtml }));
-console.log(`Generated release notes from ${source}`);
+if (changelog) {
+  const { intro, introLineIndex } = extractIntro(changelog.markdown);
+  const bodyHtml = markdownToHtml(changelog.markdown, { skipLineIndex: introLineIndex });
+
+  mkdirSync(dirname(outputPath), { recursive: true });
+  writeFileSync(outputPath, pageTemplate({ intro, bodyHtml }));
+  console.log(`Generated release notes from ${changelog.source}`);
+}
