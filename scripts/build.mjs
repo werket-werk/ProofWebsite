@@ -18,6 +18,7 @@ const entries = [
   'privacy',
   'trust',
   'beta',
+  'feedback',
   'release-notes',
   'photo-culling-app',
   'local-photo-library',

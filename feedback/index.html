@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beta Feedback — Proof for Mac</title>
+  <meta name="description" content="Share beta feedback about Proof, the fast local photo culling app for Mac.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://www.proof-photo.com/feedback/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Beta Feedback — Proof for Mac">
+  <meta property="og:description" content="Tell us what worked, what got in your way, and what Proof should improve next.">
+  <meta property="og:url" content="https://www.proof-photo.com/feedback/">
+  <meta property="og:image" content="https://www.proof-photo.com/assets/img/icon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Beta Feedback — Proof for Mac">
+  <meta name="twitter:description" content="Tell us what worked, what got in your way, and what Proof should improve next.">
+  <meta name="twitter:image" content="https://www.proof-photo.com/assets/img/icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" href="../assets/img/icon.png" type="image/png">
+</head>
+<body>
+  <header>
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container nav-inner">
+        <a href="/" class="nav-logo" aria-label="Proof home">
+          <img src="../assets/img/icon.png" alt="" aria-hidden="true" width="28" height="28">
+          <span>Proof</span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#screenshots">Screenshots</a></li>
+          <li><a href="/guide/">Guide</a></li>
+          <li><a href="/feedback/" aria-current="page">Beta Feedback</a></li>
+          <li><a href="/support/">Support</a></li>
+          <li><a href="/#download">Download</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-hero feedback-hero">
+      <div class="container">
+        <span class="feedback-kicker">For Proof beta testers</span>
+        <h1>Help shape what comes next</h1>
+        <p>Tell us what felt fast, what caused friction, and where Proof needs more work. Thoughtful criticism is especially useful.</p>
+        <div class="feedback-meta" aria-label="Form details">
+          <span>About 5 minutes</span>
+          <span>Sent privately</span>
+          <span>No photo uploads</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content feedback-content">
+      <form id="feedback-form" class="feedback-form" action="/api/feedback" method="post">
+        <section class="feedback-section" aria-labelledby="about-you-heading">
+          <div class="feedback-section-heading">
+            <span class="feedback-step" aria-hidden="true">1</span>
+            <div>
+              <h2 id="about-you-heading">About your setup</h2>
+              <p>This helps us understand feedback in the right context.</p>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <label class="field">
+              <span>Name <span class="required-mark" aria-hidden="true">*</span></span>
+              <input name="name" type="text" autocomplete="name" maxlength="100" required>
+            </label>
+            <label class="field">
+              <span>Email <span class="required-mark" aria-hidden="true">*</span></span>
+              <input name="email" type="email" autocomplete="email" maxlength="254" required>
+              <small>Only used to follow up about your feedback.</small>
+            </label>
+            <label class="field">
+              <span>Proof version <span class="required-mark" aria-hidden="true">*</span></span>
+              <input name="appVersion" type="text" autocomplete="off" maxlength="40" placeholder="For example, 0.4.2" required>
+            </label>
+            <label class="field">
+              <span>macOS version <span class="required-mark" aria-hidden="true">*</span></span>
+              <input name="macosVersion" type="text" autocomplete="off" maxlength="60" placeholder="For example, macOS 15.5" required>
+            </label>
+            <label class="field">
+              <span>Mac model</span>
+              <input name="macModel" type="text" autocomplete="off" maxlength="100" placeholder="For example, M2 MacBook Pro">
+            </label>
+            <label class="field">
+              <span>Your photography</span>
+              <select name="photographyType">
+                <option value="">Choose one (optional)</option>
+                <option value="Professional photographer">Professional photographer</option>
+                <option value="Enthusiast photographer">Enthusiast photographer</option>
+                <option value="Casual photographer">Casual photographer</option>
+                <option value="Studio or team workflow">Studio or team workflow</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+          </div>
+        </section>
+
+        <section class="feedback-section" aria-labelledby="workflow-heading">
+          <div class="feedback-section-heading">
+            <span class="feedback-step" aria-hidden="true">2</span>
+            <div>
+              <h2 id="workflow-heading">What did you try?</h2>
+              <p>Select every part of Proof you used during this test.</p>
+            </div>
+          </div>
+
+          <fieldset class="choice-group">
+            <legend class="visually-hidden">Workflows tested</legend>
+            <div class="choice-grid">
+              <label class="choice-card"><input type="checkbox" name="workflowImport" value="yes"><span>Adding folders</span></label>
+              <label class="choice-card"><input type="checkbox" name="workflowGrid" value="yes"><span>Grid culling</span></label>
+              <label class="choice-card"><input type="checkbox" name="workflowLoupe" value="yes"><span>Loupe view</span></label>
+              <label class="choice-card"><input type="checkbox" name="workflowSurvey" value="yes"><span>Survey comparison</span></label>
+              <label class="choice-card"><input type="checkbox" name="workflowRatings" value="yes"><span>Ratings, flags &amp; labels</span></label>
+              <label class="choice-card"><input type="checkbox" name="workflowExport" value="yes"><span>Exporting photos</span></label>
+              <label class="choice-card"><input type="checkbox" name="workflowHif" value="yes"><span>Fujifilm HIF files</span></label>
+            </div>
+          </fieldset>
+        </section>
+
+        <section class="feedback-section" aria-labelledby="experience-heading">
+          <div class="feedback-section-heading">
+            <span class="feedback-step" aria-hidden="true">3</span>
+            <div>
+              <h2 id="experience-heading">Your experience</h2>
+              <p>There are no wrong answers. Specific examples are the most helpful.</p>
+            </div>
+          </div>
+
+          <fieldset class="rating-fieldset">
+            <legend>Overall, how was your experience? <span class="required-mark" aria-hidden="true">*</span></legend>
+            <div class="rating-scale">
+              <label><input type="radio" name="rating" value="1" required><span><strong>1</strong><small>Frustrating</small></span></label>
+              <label><input type="radio" name="rating" value="2"><span><strong>2</strong></span></label>
+              <label><input type="radio" name="rating" value="3"><span><strong>3</strong></span></label>
+              <label><input type="radio" name="rating" value="4"><span><strong>4</strong></span></label>
+              <label><input type="radio" name="rating" value="5"><span><strong>5</strong><small>Excellent</small></span></label>
+            </div>
+          </fieldset>
+
+          <div class="feedback-long-fields">
+            <label class="field">
+              <span>What worked well? <span class="required-mark" aria-hidden="true">*</span></span>
+              <textarea name="workedWell" rows="5" maxlength="4000" placeholder="What felt useful, clear, or fast?" required></textarea>
+            </label>
+            <label class="field">
+              <span>What got in your way? <span class="required-mark" aria-hidden="true">*</span></span>
+              <textarea name="friction" rows="5" maxlength="4000" placeholder="What was confusing, slow, missing, or harder than expected?" required></textarea>
+            </label>
+            <label class="field">
+              <span>Did you find a bug?</span>
+              <textarea name="bugDetails" rows="6" maxlength="6000" placeholder="Tell us what happened, what you expected, and the steps that reproduce it."></textarea>
+            </label>
+          </div>
+        </section>
+
+        <section class="feedback-section feedback-submit-section" aria-labelledby="send-heading">
+          <div class="feedback-section-heading">
+            <span class="feedback-step" aria-hidden="true">4</span>
+            <div>
+              <h2 id="send-heading">Send your feedback</h2>
+              <p>Your answers are emailed privately to the Proof team. Please do not include passwords, private file paths, or other sensitive information.</p>
+            </div>
+          </div>
+
+          <label class="followup-choice">
+            <input type="checkbox" name="followupAllowed" value="yes" checked>
+            <span>You may contact me if you need more detail about this feedback.</span>
+          </label>
+
+          <label class="visually-hidden" aria-hidden="true">
+            Company
+            <input name="company" type="text" tabindex="-1" autocomplete="off">
+          </label>
+
+          <div class="form-actions feedback-actions">
+            <button type="submit" class="btn-primary" id="feedback-submit">Send beta feedback</button>
+            <p class="form-note"><span class="required-mark" aria-hidden="true">*</span> Required fields</p>
+          </div>
+          <p class="form-status" id="feedback-status" role="status" aria-live="polite" tabindex="-1"></p>
+        </section>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 Erik Sawaya. All rights reserved.</p>
+        <nav aria-label="Footer links">
+          <a href="/">Home</a> &nbsp;·&nbsp;
+          <a href="/guide/">User Guide</a> &nbsp;·&nbsp;
+          <a href="/beta/">Beta &amp; Contributions</a> &nbsp;·&nbsp;
+          <a href="/feedback/">Beta Feedback</a> &nbsp;·&nbsp;
+          <a href="/release-notes/">Release Notes</a> &nbsp;·&nbsp;
+          <a href="/support/">Support</a> &nbsp;·&nbsp;
+          <a href="/privacy/">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.querySelector('.site-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    const toggle = document.getElementById('nav-toggle');
+    const links = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    const form = document.getElementById('feedback-form');
+    const status = document.getElementById('feedback-status');
+    const submit = document.getElementById('feedback-submit');
+
+    function setStatus(message, state, focus = false) {
+      status.textContent = message;
+      status.dataset.state = state;
+      if (focus) status.focus();
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('sent') === '1') {
+      setStatus('Thank you — your beta feedback was sent.', 'success');
+      history.replaceState({}, '', window.location.pathname);
+    } else if (params.get('error')) {
+      setStatus(params.get('error'), 'error');
+      history.replaceState({}, '', window.location.pathname);
+    }
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      setStatus('', '');
+      submit.disabled = true;
+      submit.setAttribute('aria-busy', 'true');
+      submit.textContent = 'Sending…';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: new FormData(form),
+        });
+
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok || !data.ok) {
+          throw new Error(data.error || 'Your feedback could not be sent.');
+        }
+
+        form.reset();
+        setStatus('Thank you — your beta feedback was sent. It will directly inform what we improve next.', 'success', true);
+      } catch (error) {
+        setStatus(error.message || 'Your feedback could not be sent. Please try again.', 'error', true);
+      } finally {
+        submit.disabled = false;
+        submit.removeAttribute('aria-busy');
+        submit.textContent = 'Send beta feedback';
+      }
+    });
+  </script>
+</body>
+</html>
