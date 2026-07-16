@@ -105,8 +105,8 @@ export async function onRequestPost(context) {
     }
 
     const apiKey = clean(env.RESEND_API_KEY, 500);
-    const from = clean(env.CONTACT_FROM_EMAIL, 254);
-    const to = clean(env.CONTACT_TO_EMAIL, 254);
+    const from = clean(env.FEEDBACK_FROM_EMAIL, 254) || clean(env.CONTACT_FROM_EMAIL, 254);
+    const to = clean(env.FEEDBACK_TO_EMAIL, 254) || clean(env.CONTACT_TO_EMAIL, 254);
 
     if (!apiKey || !from || !to) {
       return json({ ok: false, error: 'Feedback delivery is not configured.' }, 500);
