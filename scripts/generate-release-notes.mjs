@@ -156,10 +156,11 @@ function pageTemplate({ intro, bodyHtml }) {
   <meta name="twitter:title" content="Release Notes — Proof for Mac">
   <meta name="twitter:description" content="Latest Proof for Mac updates, fixes, reliability improvements, and beta development notes.">
   <meta name="twitter:image" content="https://www.proof-photo.com/assets/img/icon.png">
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css?v=20260719-premium-home">
   <link rel="icon" href="../assets/img/icon.png" type="image/png">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header>
     <nav class="site-nav" aria-label="Main navigation">
       <div class="container nav-inner">
@@ -168,12 +169,11 @@ function pageTemplate({ intro, bodyHtml }) {
           <span>Proof</span>
         </a>
         <ul class="nav-links" id="nav-links">
-          <li><a href="/#features">Features</a></li>
-          <li><a href="/#screenshots">Screenshots</a></li>
-          <li><a href="/#develop">Develop</a></li>
+          <li><a href="/#features">Product</a></li>
+          <li><a href="/#demo">Watch</a></li>
           <li><a href="/guide/">Guide</a></li>
           <li><a href="/support/">Support</a></li>
-          <li><a href="/#download">Download</a></li>
+          <li><a class="nav-store-link" href="https://store.proof-photo.com" target="_blank" rel="noreferrer">Try Proof</a></li>
         </ul>
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
           <span></span><span></span><span></span>
@@ -182,7 +182,7 @@ function pageTemplate({ intro, bodyHtml }) {
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <div class="page-hero">
       <div class="container">
         <h1>Release Notes</h1>
@@ -197,22 +197,18 @@ ${bodyHtml}
 
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-bottom">
-        <p>© 2026 Erik Sawaya. All rights reserved.</p>
-        <nav aria-label="Footer links">
-          <a href="/">Home</a> &nbsp;·&nbsp;
-          <a href="/photo-culling-app/">Photo Culling App</a> &nbsp;·&nbsp;
-          <a href="/local-photo-library/">Local Photo Library</a> &nbsp;·&nbsp;
-          <a href="/fujifilm-hif-to-heic/">Fujifilm HIF to HEIC</a> &nbsp;·&nbsp;
-          <a href="/guide/">User Guide</a> &nbsp;·&nbsp;
-          <a href="/manual/">User Manual</a> &nbsp;·&nbsp;
-          <a href="/beta/">Beta &amp; Contributions</a> &nbsp;·&nbsp;
-          <a href="/release-notes/">Release Notes</a> &nbsp;·&nbsp;
-          <a href="/support/">Support</a> &nbsp;·&nbsp;
-          <a href="/trust/">Security &amp; Trust</a> &nbsp;·&nbsp;
-          <a href="/privacy/">Privacy Policy</a>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo" aria-label="Proof home"><img src="../assets/img/icon.png" alt="" aria-hidden="true" width="28" height="28"><span>Proof</span></a>
+          <p>An ultra-fast, lightweight, local photo culling app for Mac &amp; iPad.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <section class="footer-col" aria-labelledby="footer-product"><h2 id="footer-product">Product</h2><ul><li><a href="/#features">Product</a></li><li><a href="/#demo">Watch</a></li><li><a href="/guide/">Guide</a></li><li><a href="/manual/">Manual</a></li><li><a href="/release-notes/">Release Notes</a></li></ul></section>
+          <section class="footer-col" aria-labelledby="footer-explore"><h2 id="footer-explore">Explore</h2><ul><li><a href="/photo-culling-app/">Photo Culling</a></li><li><a href="/local-photo-library/">Local Library</a></li><li><a href="/fujifilm-hif-to-heic/">Fujifilm HIF</a></li></ul></section>
+          <section class="footer-col" aria-labelledby="footer-trust"><h2 id="footer-trust">Trust</h2><ul><li><a href="/beta/">Beta</a></li><li><a href="/feedback/">Feedback</a></li><li><a href="/support/">Support</a></li><li><a href="/trust/">Security &amp; Trust</a></li><li><a href="/privacy/">Privacy</a></li></ul></section>
         </nav>
       </div>
+      <div class="footer-bottom"><p>© 2026 Erik Sawaya. Made in Australia.</p></div>
     </div>
   </footer>
 
@@ -227,6 +223,18 @@ ${bodyHtml}
     toggle.addEventListener('click', () => {
       const open = links.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open);
+    });
+    const closeMenu = (returnFocus = false) => {
+      if (!links.classList.contains('open')) return;
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      if (returnFocus) toggle.focus();
+    };
+    links.addEventListener('click', (event) => {
+      if (event.target.closest('a')) closeMenu();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu(true);
     });
   </script>
 </body>
