@@ -69,8 +69,8 @@
         <ul class="nav-links" id="nav-links">
           <li><a href="#features">Product</a></li>
           <li><a href="#demo">Watch</a></li>
-          <li><a href="/guide/">Guide</a></li>
-          <li><a href="/support/">Support</a></li>
+          <li><a href="guide/index.html">Guide</a></li>
+          <li><a href="support/index.html">Support</a></li>
           <li><a class="nav-store-link" href="https://store.proof-photo.com" target="_blank" rel="noreferrer">Try Proof</a></li>
         </ul>
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
@@ -92,7 +92,7 @@
         </a>
       </div>
 
-      <div class="hero-preview" id="screenshots" aria-label="Proof app preview">
+      <div class="hero-preview" aria-label="Proof app preview">
         <img class="hero-banner" src="assets/img/proof-banner.png" alt="Proof showing a folder-based photo grid with flags, ratings, labels, and selected photographs" width="3102" height="1524" decoding="async" fetchpriority="high">
       </div>
     </section>
@@ -120,6 +120,55 @@
             <h3>Stay close to your files</h3>
             <p>Work from folders on your Mac with a catalog that stays local.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="screenshots" class="home-screenshots" aria-labelledby="screenshots-title">
+      <div class="container">
+        <div class="home-section-intro">
+          <p class="home-eyebrow">Inside Proof</p>
+          <h2 id="screenshots-title">Proof, up close.</h2>
+          <p>Grid, Survey, Loupe, ratings, preferences, and Fujifilm metadata from the current Mac app.</p>
+        </div>
+
+        <div class="home-screenshot-grid">
+          <figure class="home-shot">
+            <button type="button" class="home-shot-media home-shot-trigger" data-lightbox-src="assets/img/proof-grid.png" data-lightbox-alt="Proof grid view with folders, filters, and selected images" data-lightbox-caption="Grid — Folders, filters, ratings, and fast culling." aria-label="Open Grid screenshot">
+              <img src="assets/img/proof-grid.png" alt="Proof grid view with folders, filters, and selected images" width="3106" height="2116" loading="lazy" decoding="async">
+            </button>
+            <figcaption><strong>Grid</strong><span>Folders, filters, ratings, and fast culling.</span></figcaption>
+          </figure>
+          <figure class="home-shot">
+            <button type="button" class="home-shot-media home-shot-trigger" data-lightbox-src="assets/img/proof-survey.png" data-lightbox-alt="Proof Survey view comparing two selected photos side by side" data-lightbox-caption="Survey — Compare selected frames side by side." aria-label="Open Survey screenshot">
+              <img src="assets/img/proof-survey.png" alt="Proof Survey view comparing two selected photos side by side" width="3194" height="2204" loading="lazy" decoding="async">
+            </button>
+            <figcaption><strong>Survey</strong><span>Compare selected frames side by side.</span></figcaption>
+          </figure>
+          <figure class="home-shot">
+            <button type="button" class="home-shot-media home-shot-trigger" data-lightbox-src="assets/img/proof-loupe.png" data-lightbox-alt="Proof Loupe view showing a single photo at large size" data-lightbox-caption="Loupe — Inspect focus and detail." aria-label="Open Loupe screenshot">
+              <img src="assets/img/proof-loupe.png" alt="Proof Loupe view showing a single photo at large size" width="3106" height="2116" loading="lazy" decoding="async">
+            </button>
+            <figcaption><strong>Loupe</strong><span>Inspect focus and detail.</span></figcaption>
+          </figure>
+          <figure class="home-shot">
+            <button type="button" class="home-shot-media home-shot-trigger" data-lightbox-src="assets/img/proof-ratings.png" data-lightbox-alt="Proof ratings and labels workflow with star, pick, and color controls" data-lightbox-caption="Ratings &amp; labels — Pick, reject, rate, and sort quickly." aria-label="Open Ratings and labels screenshot">
+              <img src="assets/img/proof-ratings.png" alt="Proof ratings and labels workflow with star, pick, and color controls" width="3106" height="2116" loading="lazy" decoding="async">
+            </button>
+            <figcaption><strong>Ratings &amp; labels</strong><span>Pick, reject, rate, and sort quickly.</span></figcaption>
+          </figure>
+          <figure class="home-shot">
+            <button type="button" class="home-shot-media home-shot-trigger" data-lightbox-src="assets/img/proof-preferences.png" data-lightbox-alt="Proof preferences window with application settings" data-lightbox-caption="Preferences — Set workflow defaults." aria-label="Open Preferences screenshot">
+              <img src="assets/img/proof-preferences.png" alt="Proof preferences window with application settings" width="1924" height="1826" loading="lazy" decoding="async">
+            </button>
+            <figcaption><strong>Preferences</strong><span>Set workflow defaults.</span></figcaption>
+          </figure>
+          <figure class="home-shot">
+            <button type="button" class="home-shot-media home-shot-trigger" data-lightbox-src="assets/img/proof-fujifilm-film-sim-metadata.png" data-lightbox-alt="Proof metadata view showing Fujifilm film simulation information" data-lightbox-caption="Fujifilm metadata — See film simulation and recipe details." aria-label="Open Fujifilm metadata screenshot">
+              <img src="assets/img/proof-fujifilm-film-sim-metadata.png" alt="Proof metadata view showing Fujifilm film simulation information" width="2468" height="1482" loading="lazy" decoding="async">
+            </button>
+            <figcaption><strong>Fujifilm metadata</strong><span>See film simulation and recipe details.</span></figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -177,6 +226,24 @@
     </section>
   </main>
 
+  <div class="screenshot-lightbox" id="screenshot-lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="screenshot-lightbox-caption" hidden>
+    <button type="button" class="screenshot-lightbox-backdrop" data-lightbox-close tabindex="-1" aria-label="Close screenshot viewer"></button>
+    <div class="screenshot-lightbox-panel">
+      <div class="screenshot-lightbox-header">
+        <p id="screenshot-lightbox-caption" aria-live="polite"></p>
+        <button type="button" class="screenshot-lightbox-close" data-lightbox-close aria-label="Close screenshot viewer"><span aria-hidden="true">×</span></button>
+      </div>
+      <div class="screenshot-lightbox-image-shell">
+        <img id="screenshot-lightbox-image" alt="">
+      </div>
+      <div class="screenshot-lightbox-controls">
+        <button type="button" data-lightbox-prev><span aria-hidden="true">←</span> Previous</button>
+        <span id="screenshot-lightbox-count" aria-live="polite"></span>
+        <button type="button" data-lightbox-next>Next <span aria-hidden="true">→</span></button>
+      </div>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <div class="container">
       <div class="footer-inner">
@@ -193,7 +260,7 @@
             <ul>
               <li><a href="/#features">Product</a></li>
               <li><a href="/#demo">Watch</a></li>
-              <li><a href="/guide/">Guide</a></li>
+              <li><a href="guide/index.html">Guide</a></li>
               <li><a href="/manual/">Manual</a></li>
               <li><a href="/release-notes/">Release Notes</a></li>
             </ul>
@@ -211,7 +278,7 @@
             <ul>
               <li><a href="/beta/">Beta</a></li>
               <li><a href="/feedback/">Feedback</a></li>
-              <li><a href="/support/">Support</a></li>
+              <li><a href="support/index.html">Support</a></li>
               <li><a href="/trust/">Security &amp; Trust</a></li>
               <li><a href="/privacy/">Privacy</a></li>
             </ul>
@@ -251,6 +318,95 @@
     window.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && links.classList.contains('open')) {
         closeNavigation(true);
+      }
+    });
+
+    const lightbox = document.getElementById('screenshot-lightbox');
+    const lightboxImage = document.getElementById('screenshot-lightbox-image');
+    const lightboxCaption = document.getElementById('screenshot-lightbox-caption');
+    const lightboxCount = document.getElementById('screenshot-lightbox-count');
+    const lightboxClose = lightbox.querySelector('.screenshot-lightbox-close');
+    const lightboxTriggers = Array.from(document.querySelectorAll('.home-shot-trigger'));
+    const lightboxRegions = [document.querySelector('header'), document.querySelector('main'), document.querySelector('footer')];
+    let activeScreenshot = 0;
+    let previousLightboxFocus = null;
+
+    function setLightboxPageInert(inert) {
+      lightboxRegions.forEach((region) => {
+        if (region) region.inert = inert;
+      });
+    }
+
+    function showScreenshot(index) {
+      activeScreenshot = (index + lightboxTriggers.length) % lightboxTriggers.length;
+      const trigger = lightboxTriggers[activeScreenshot];
+      lightboxImage.src = trigger.dataset.lightboxSrc;
+      lightboxImage.alt = trigger.dataset.lightboxAlt;
+      lightboxCaption.textContent = trigger.dataset.lightboxCaption;
+      lightboxCount.textContent = `${activeScreenshot + 1} of ${lightboxTriggers.length}`;
+    }
+
+    function openLightbox(index, trigger) {
+      closeNavigation(false);
+      previousLightboxFocus = trigger;
+      showScreenshot(index);
+      lightbox.hidden = false;
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('screenshot-lightbox-open');
+      setLightboxPageInert(true);
+      lightboxClose.focus();
+    }
+
+    function closeLightbox() {
+      if (lightbox.hidden) return;
+      lightbox.hidden = true;
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('screenshot-lightbox-open');
+      setLightboxPageInert(false);
+      lightboxImage.removeAttribute('src');
+      lightboxImage.alt = '';
+      previousLightboxFocus?.focus();
+    }
+
+    lightboxTriggers.forEach((trigger, index) => {
+      trigger.addEventListener('click', () => openLightbox(index, trigger));
+    });
+
+    lightbox.querySelectorAll('[data-lightbox-close]').forEach((button) => {
+      button.addEventListener('click', closeLightbox);
+    });
+    lightbox.querySelector('[data-lightbox-prev]').addEventListener('click', () => showScreenshot(activeScreenshot - 1));
+    lightbox.querySelector('[data-lightbox-next]').addEventListener('click', () => showScreenshot(activeScreenshot + 1));
+
+    window.addEventListener('keydown', (event) => {
+      if (lightbox.hidden) return;
+
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closeLightbox();
+        return;
+      }
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        showScreenshot(activeScreenshot - 1);
+        return;
+      }
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        showScreenshot(activeScreenshot + 1);
+        return;
+      }
+      if (event.key === 'Tab') {
+        const focusable = Array.from(lightbox.querySelectorAll('button:not([tabindex="-1"])'));
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
       }
     });
   </script>
