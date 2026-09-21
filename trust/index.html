@@ -15,7 +15,7 @@
   <meta name="twitter:title" content="Security &amp; Trust — Proof for Mac">
   <meta name="twitter:description" content="Proof is signed, notarized, local-first, and verifiable. Learn what Proof can access and how to check it yourself.">
   <meta name="twitter:image" content="https://www.proof-photo.com/assets/img/icon.png">
-  <link rel="stylesheet" href="../assets/css/style.css?v=20260719-premium-home">
+  <link rel="stylesheet" href="../assets/css/style.css?v=20260921-beta-downloads">
   <link rel="icon" href="../assets/img/icon.png" type="image/png">
 </head>
 <body>
@@ -32,7 +32,7 @@
           <li><a href="/#demo">Watch</a></li>
           <li><a href="/guide/">Guide</a></li>
           <li><a href="/support/">Support</a></li>
-          <li><a class="nav-store-link" href="https://store.proof-photo.com" target="_blank" rel="noreferrer">Try Proof</a></li>
+          <li><a class="nav-store-link" href="/download/mac">Download for Mac</a></li>
         </ul>
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
           <span></span><span></span><span></span>
@@ -54,11 +54,11 @@
       <ul>
         <li><strong>Signed and notarized by Apple.</strong> Proof is code-signed with a verified Apple Developer ID and notarized by Apple, which means Apple scanned the exact binary you downloaded for malware.</li>
         <li><strong>A real, named developer.</strong> Proof is published by Erik Sawaya under Apple Developer Team ID <code>225KXPVW4C</code>, tied to a legally verified Apple developer account.</li>
-        <li><strong>Your photos never leave your Mac.</strong> Proof reads and edits the image files you point it at on your own disk. It does not upload your photos, catalog, edits, metadata, or file paths.</li>
-        <li><strong>One internet connection: update checks.</strong> On launch, Proof asks GitHub whether a newer version exists. Proof does not include analytics, telemetry, tracking, advertising, or cloud sync.</li>
+        <li><strong>Local by default.</strong> Your catalog and edits are local by default. Optional publishing uploads selected photographs to services you connect; Shared Library beta sync stores encrypted changes in your chosen storage.</li>
+        <li><strong>Clear network purposes.</strong> Proof contacts GitHub for update checks and downloads. Optional publishing and Shared Library sync use your chosen services or storage. The app does not include advertising or usage-tracking SDKs.</li>
       </ul>
 
-      <h2>What Apple's Notarization Guarantees</h2>
+      <h2>What Apple’s Notarization Checks</h2>
       <p>Notarization is Apple's trust mechanism for Mac software distributed outside the Mac App Store. Before release, the Proof binary is uploaded to Apple, checked against a valid paid Apple Developer ID, scanned for malware, and issued a notarization ticket.</p>
       <p>Your Mac checks that ticket the first time you open Proof. If the app has been changed after signing, even by a single byte, the signature breaks and macOS refuses to launch it. This is the same mechanism used by many paid, closed-source Mac apps.</p>
 
@@ -83,19 +83,19 @@ stapler validate /Applications/Proof.app</code></pre>
         <tbody>
           <tr>
             <td>Read the image folders you open</td>
-            <td>Upload, sync, or back up your photos anywhere</td>
+            <td>Automatically upload or back up your photo library</td>
           </tr>
           <tr>
             <td>Write thumbnails and previews to a local cache</td>
-            <td>Send your catalog or edits to any server</td>
+            <td>Send your catalog to a Proof-hosted service</td>
           </tr>
           <tr>
             <td>Read camera metadata, including EXIF and film simulation details</td>
             <td>Collect analytics, telemetry, or usage tracking</td>
           </tr>
           <tr>
-            <td>Check GitHub once on launch for app updates</td>
-            <td>Contact ad networks, trackers, or cloud photo services</td>
+            <td>Check GitHub for updates and connect to publishing services when requested</td>
+            <td>Contact advertising networks or usage trackers</td>
           </tr>
         </tbody>
       </table>
@@ -107,11 +107,11 @@ stapler validate /Applications/Proof.app</code></pre>
         <li>Thumbnails: <code>~/Library/Caches/com.werket.proof/</code></li>
       </ul>
 
-      <h2>The One Network Connection</h2>
+      <h2>Updates and Optional Connections</h2>
       <p>On launch, Proof checks whether a newer version is available by fetching a small public manifest from GitHub:</p>
       <pre><code>https://github.com/werket-werk/proof-releases/releases/latest/download/latest.json</code></pre>
       <p>This is the standard Tauri auto-updater. Any update offered through that channel is cryptographically signed with a key held by the developer, and Proof verifies the update signature before installing it.</p>
-      <p>You can watch this with a network monitor such as Little Snitch or macOS firewall tooling. You should see a GitHub connection on startup and no analytics, telemetry, tracking, advertising, or cloud sync traffic.</p>
+      <p>Update checks can contact GitHub at startup, on retry, and when you check manually. Downloading an update also uses GitHub’s asset delivery servers. Connecting a publishing account and publishing selected photos adds requests to that service. Shared Library beta sync can use a cloud-synced folder or a compatible server you configure. Website downloads, email signup, and support forms are described separately in the <a href="/privacy/">privacy policy</a>.</p>
 
       <h2>Why Proof Is Not Open Source</h2>
       <p>Proof is an independent product in beta development, and the source code is part of the product's intellectual property. That is the same position as many closed-source Mac apps.</p>
@@ -127,7 +127,7 @@ stapler validate /Applications/Proof.app</code></pre>
       <div class="footer-inner">
         <div class="footer-brand">
           <a href="/" class="nav-logo" aria-label="Proof home"><img src="../assets/img/icon.png" alt="" aria-hidden="true" width="28" height="28"><span>Proof</span></a>
-          <p>An ultra-fast, lightweight, local photo culling app for Mac &amp; iPad.</p>
+          <p>A local home for culling and developing your photographs. Built for Fuji shooters first.</p>
         </div>
         <nav class="footer-links" aria-label="Footer navigation">
           <section class="footer-col" aria-labelledby="footer-product"><h2 id="footer-product">Product</h2><ul><li><a href="/#features">Product</a></li><li><a href="/#demo">Watch</a></li><li><a href="/guide/">Guide</a></li><li><a href="/manual/">Manual</a></li><li><a href="/release-notes/">Release Notes</a></li></ul></section>

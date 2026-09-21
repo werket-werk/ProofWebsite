@@ -1,4 +1,5 @@
-import { cpSync, existsSync, mkdirSync, readdirSync, rmSync, statSync } from 'node:fs';
+import { validateRelease } from '../lib/release.js';
+import { readFileSync, writeFileSync, cpSync, existsSync, mkdirSync, readdirSync, rmSync, statSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -48,3 +49,10 @@ for (const entry of entries) {
   if (!existsSync(source)) continue;
   copyEntry(source, destination);
 }
+
+// Keep the static version label aligned with the bundled redirect metadata.
+const release = JSON.parse(readFileSync(join(projectRoot, 'data/release.json'), 'utf8'));
+validateRelease(release);
+const home = join(distDir, 'index.html');
+writeFileSync(home, readFileSync(home, 'utf8').replace(/<!-- release-label:start -->.*?<!-- release-label:end -->/s, `Version ${release.version}`));
+writeFileSync(join(distDir, '_routes.json'), JSON.stringify({ version: 1, include: ['/api/*', '/download/*', '/email/*'], exclude: [] }));

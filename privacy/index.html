@@ -15,7 +15,7 @@
   <meta name="twitter:title" content="Privacy Policy — Proof for Mac">
   <meta name="twitter:description" content="How the Proof app and website handle photos, app data, support requests, and beta feedback.">
   <meta name="twitter:image" content="https://www.proof-photo.com/assets/img/icon.png">
-  <link rel="stylesheet" href="../assets/css/style.css?v=20260719-premium-home">
+  <link rel="stylesheet" href="../assets/css/style.css?v=20260921-beta-downloads">
   <link rel="icon" href="../assets/img/icon.png" type="image/png">
 </head>
 <body>
@@ -32,7 +32,7 @@
           <li><a href="/#demo">Watch</a></li>
           <li><a href="/guide/">Guide</a></li>
           <li><a href="/support/">Support</a></li>
-          <li><a class="nav-store-link" href="https://store.proof-photo.com" target="_blank" rel="noreferrer">Try Proof</a></li>
+          <li><a class="nav-store-link" href="/download/mac">Download for Mac</a></li>
         </ul>
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
           <span></span><span></span><span></span>
@@ -45,33 +45,28 @@
     <div class="page-hero">
       <div class="container">
         <h1>Privacy Policy</h1>
-        <p>Last updated: July 5, 2026</p>
+        <p>Last updated: September 21, 2026</p>
       </div>
     </div>
 
     <div class="page-content">
-      <p><strong>The Proof app does not collect, transmit, or share personal data from your photo workflow.</strong> If you choose to contact the Proof team through this website, the details you submit are used only to respond to your message, review beta feedback, and improve Proof.</p>
-
-      <h2>Your Photos</h2>
-      <p>Proof accesses photos on your Mac solely to display thumbnails and allow you to view, rate, and cull them. No photos, metadata, or file paths are uploaded to any server. Everything stays on your device.</p>
-
-      <h2>Your Catalog</h2>
-      <p>All ratings, flags, adjustments, and settings are stored in a SQLite database on your Mac at <code>~/Library/Application Support/Proof/</code>. This file never leaves your device.</p>
-
-      <h2>Analytics</h2>
-      <p>Proof does not use any analytics, telemetry, or crash-reporting services. No usage data is collected.</p>
-
-      <h2>Third-Party Services</h2>
-      <p>Proof does not include analytics SDKs, advertising networks, cloud sync, or telemetry services. On launch, Proof may contact GitHub to check whether a newer version is available. That update check does not upload your photos, catalog, edits, metadata, or file paths.</p>
-
-      <h2>Website Forms</h2>
-      <p>The support and beta feedback forms send the information you enter to the Proof team by email through Resend. This can include your name, email address, app and macOS versions, computer model, workflow notes, experience rating, and bug details. Do not submit photos, passwords, private file paths, or other sensitive information. Form submissions are used only to review your message, improve Proof, and follow up when appropriate.</p>
-
-      <h2>Security</h2>
-      <p>Proof is signed and notarized for macOS. Read the <a href="/trust/">Security &amp; Trust page</a> for verification commands, update-channel details, and local cache locations.</p>
-
-      <h2>Questions</h2>
-      <p>Use the <a href="/support/#contact">support form</a> if you have a privacy question or want to request a review of your data handling concern.</p>
+      <p><strong>Your photo workflow is local by default. Publishing and Shared Library sync are optional.</strong> Downloading Proof does not subscribe you to email.</p>
+      <h2>The Mac App</h2>
+      <p>Proof reads the folders you choose for browsing, culling, and developing. Ratings, flags, and adjustments are stored in your local catalog. Developing does not overwrite originals; file operations such as rename, move, Trash, or HIF extension normalization happen through the relevant workflow.</p>
+      <p>If you enable the Shared Library beta, encrypted library changes and snapshots are stored in the folder or compatible service you select; a cloud-synced folder may transfer that data through its provider. The app checks GitHub for updates and downloads updates when requested. Optional publishing connects to the services you authorize and uploads the photographs you select. Those services handle data under their own privacy policies. The app does not include advertising or usage-tracking SDKs.</p>
+      <h2>Optional Product Emails</h2>
+      <p>If you sign up, we collect your email address to send feature releases and occasional beta surveys. You must confirm your address before receiving these emails. We store the signup and confirmation times and the wording you agreed to. Resend delivers the emails; Cloudflare D1 stores the subscription and consent records.</p>
+      <p>Each product email includes an unsubscribe link. Unsubscribing stops both feature updates and survey invitations. We do not automatically add people who download Proof, contact support, or submit feedback to this list.</p>
+      <h2>Website Measurement and Abuse Prevention</h2>
+      <p>We count download requests by day and release, and confirmed signups by day. A request is not proof of a completed download, installation, or unique user. We do not associate download requests with email addresses or use tracking cookies, fingerprinting, or email-open tracking.</p>
+      <p>To limit signup abuse, the server uses a short-lived, keyed hash derived from the request IP address and hour. We do not store the raw IP address in the signup database. Hosting and delivery providers necessarily process connection information and may maintain operational or security logs under their own policies. Downloads are hosted by GitHub.</p>
+      <h2>Retention and Your Choices</h2>
+      <p>Confirmation links expire after 24 hours. Unconfirmed signups are removed after seven days during database maintenance; expired rate-limit records are also removed. Active subscription records are kept while you remain subscribed. We retain an unsubscribed record to prevent accidental re-enrolment, unless you request deletion. Aggregate counts contain no email addresses and are retained for product planning.</p>
+      <p>Use the <a href="/support/#contact">support form</a> to request access, correction, or deletion of your subscription information. No account is required to unsubscribe.</p>
+      <h2>Support and Feedback Forms</h2>
+      <p>These forms send the information you enter to the Proof team through Resend. This may include your name, email, app and macOS versions, computer model, workflow notes, and bug details. We use it to respond, review feedback, and improve Proof. Do not include passwords or other sensitive information.</p>
+      <h2>Security and Providers</h2>
+      <p>Read the <a href="/trust/">Security &amp; Trust page</a> for app verification details. Provider privacy information: <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a>, <a href="https://resend.com/legal/privacy-policy">Resend</a>, and <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub</a>.</p>
     </div>
   </main>
 
@@ -80,7 +75,7 @@
       <div class="footer-inner">
         <div class="footer-brand">
           <a href="/" class="nav-logo" aria-label="Proof home"><img src="../assets/img/icon.png" alt="" aria-hidden="true" width="28" height="28"><span>Proof</span></a>
-          <p>An ultra-fast, lightweight, local photo culling app for Mac &amp; iPad.</p>
+          <p>A local home for culling and developing your photographs. Built for Fuji shooters first.</p>
         </div>
         <nav class="footer-links" aria-label="Footer navigation">
           <section class="footer-col" aria-labelledby="footer-product"><h2 id="footer-product">Product</h2><ul><li><a href="/#features">Product</a></li><li><a href="/#demo">Watch</a></li><li><a href="/guide/">Guide</a></li><li><a href="/manual/">Manual</a></li><li><a href="/release-notes/">Release Notes</a></li></ul></section>

@@ -15,7 +15,7 @@
   <meta name="twitter:title" content="User Manual — Proof for Mac">
   <meta name="twitter:description" content="The full Proof reference for catalogs, folders, culling, filtering, Loupe, Survey, collections, export, preferences, shortcuts, and troubleshooting.">
   <meta name="twitter:image" content="https://www.proof-photo.com/assets/img/proof-banner.png">
-  <link rel="stylesheet" href="../assets/css/style.css?v=20260719-premium-home">
+  <link rel="stylesheet" href="../assets/css/style.css?v=20260921-beta-downloads">
   <link rel="icon" href="../assets/img/icon.png" type="image/png">
 </head>
 <body>
@@ -32,7 +32,7 @@
           <li><a href="/#demo">Watch</a></li>
           <li><a href="/guide/">Guide</a></li>
           <li><a href="/support/">Support</a></li>
-          <li><a class="nav-store-link" href="https://store.proof-photo.com" target="_blank" rel="noreferrer">Try Proof</a></li>
+          <li><a class="nav-store-link" href="/download/mac">Download for Mac</a></li>
         </ul>
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
           <span></span><span></span><span></span>
@@ -68,7 +68,7 @@
             <li><a href="#loupe">Loupe</a></li>
             <li><a href="#collections">Collections</a></li>
             <li><a href="#files">File actions</a></li>
-            <li><a href="#export">Export</a></li>
+            <li><a href="#import">Import</a></li><li><a href="#fuji-x-raw">Fuji X-Raw</a></li><li><a href="#develop">Develop</a></li><li><a href="#publishing">Publishing</a></li><li><a href="#export">Export</a></li>
             <li><a href="#preferences">Preferences</a></li>
             <li><a href="#cache">Cache</a></li>
             <li><a href="#shortcuts">Shortcuts</a></li>
@@ -112,7 +112,7 @@
               <tbody>
                 <tr><td>Grid</td><td><code>G</code></td><td>Browse, select, filter, sort, organize, and cull thumbnails.</td></tr>
                 <tr><td>Loupe</td><td><code>E</code></td><td>Inspect one photo large, zoom, pan, review metadata, and add keywords.</td></tr>
-                <tr><td>Survey</td><td><code>N</code></td><td>Compare selected photos side by side.</td></tr>
+                <tr><td>Survey</td><td><code>N</code></td><td>Compare selected photos side by side.</td></tr><tr><td>Develop</td><td><code>D</code></td><td>Make non-destructive adjustments on Mac.</td></tr>
               </tbody>
             </table>
             <p>Press <code>F</code> to enter immersive full-screen photo view. Press <code>F</code> again or <code>Esc</code> to exit.</p>
@@ -178,7 +178,7 @@
                 <tr><td>Temporary Hand</td><td>Hold <code>Space</code></td><td>Temporarily pan without changing tools.</td></tr>
               </tbody>
             </table>
-            <p>Keywords are edited in the Loupe metadata bar. Add a keyword, press <code>Enter</code>, and later filter by keyword from the filter bar.</p>
+            <p>Use <strong>Shift+F</strong> for Survey Focus Mode and the remove control on a Survey image to take it out of the comparison. Customize Info overlays in Preferences. Keywords are edited in the metadata inspector. Add a keyword, press <code>Enter</code>, and later filter by keyword from the filter bar.</p>
             <p>Survey compares the current Grid selection. Select two or more photos, press <code>N</code>, then use side-by-side comparison with synced zoom and pan for focus checks, expression choices, and selecting the keeper from a burst.</p>
           </section>
 
@@ -200,6 +200,10 @@
             </ul>
           </section>
 
+          <section id="import"><h2>Import from a Camera or SD Card</h2><p>Choose <strong>Import</strong> in the toolbar, select the source, and follow progress through copying and catalog preparation. Use <strong>Add Folder</strong> for photographs already on a drive. Keep the source connected until import finishes.</p></section>
+          <section id="fuji-x-raw"><h2>Fuji X-Raw and Camera Recipes</h2><p>Select a RAF and choose <strong>Fuji-X-Raw</strong> with a supported Fujifilm camera connected in the appropriate USB RAW-conversion mode. Choose film simulation and recipe settings, render a preview, then convert. Available settings depend on the camera and source photograph.</p><p>Import or export recipe text to reuse a look. Compare becomes useful after a successful render; changing settings does not itself produce a new camera-rendered result.</p></section>
+          <section id="develop"><h2>Develop on Mac</h2><p>Open <strong>Develop</strong> beside Grid, Loupe, and Survey. Adjust exposure, white balance, tone, and colour without overwriting the original. Saved adjustments stay in the catalog. Develop is in beta; rendering and advanced tools such as curves and masks are still being refined.</p><p>RAW and camera-rendered companions stay together for review and camera-match previews. Use the capture’s context menu to decouple a pair when you need to work with separate files. Check the exported result before final delivery, especially for HEIF sources that rely on an embedded browsing preview.</p></section>
+          <section id="publishing"><h2>Publish Selected Photographs</h2><p>Connect a supported service in <strong>Preferences → Publishing</strong>, then select photos and choose <strong>Publish</strong>. Publishing uploads those photographs to your chosen destination; it is optional and separate from your local catalog.</p></section>
           <section id="export">
             <h2>Exporting and Deleting</h2>
             <p>Export writes new rendered files and does not modify originals. Select photos, choose Export, pick JPEG, PNG, TIFF, or WebP, and choose a destination file or folder.</p>
@@ -271,7 +275,7 @@
       <div class="footer-inner">
         <div class="footer-brand">
           <a href="/" class="nav-logo" aria-label="Proof home"><img src="../assets/img/icon.png" alt="" aria-hidden="true" width="28" height="28"><span>Proof</span></a>
-          <p>An ultra-fast, lightweight, local photo culling app for Mac &amp; iPad.</p>
+          <p>A local home for culling and developing your photographs. Built for Fuji shooters first.</p>
         </div>
         <nav class="footer-links" aria-label="Footer navigation">
           <section class="footer-col" aria-labelledby="footer-product"><h2 id="footer-product">Product</h2><ul><li><a href="/#features">Product</a></li><li><a href="/#demo">Watch</a></li><li><a href="/guide/">Guide</a></li><li><a href="/manual/">Manual</a></li><li><a href="/release-notes/">Release Notes</a></li></ul></section>

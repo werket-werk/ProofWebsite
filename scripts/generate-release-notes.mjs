@@ -5,12 +5,6 @@ import { fileURLToPath } from 'node:url';
 const scriptDir = dirname(fileURLToPath(import.meta.url));
 const projectRoot = dirname(scriptDir);
 const outputPath = join(projectRoot, 'release-notes', 'index.html');
-const rawChangelogUrl = process.env.PROOF_CHANGELOG_URL || 'https://raw.githubusercontent.com/werket-werk/Proof/main/CHANGELOG.md';
-
-const changelogCandidates = process.env.PROOF_CHANGELOG_PATH
-  ? [process.env.PROOF_CHANGELOG_PATH]
-  : [join(projectRoot, '..', 'Proof', 'CHANGELOG.md')];
-
 function escapeHtml(value) {
   return value
     .replaceAll('&', '&amp;')
@@ -108,34 +102,10 @@ function extractIntro(markdown) {
 }
 
 async function readChangelog() {
-  for (const candidate of changelogCandidates) {
-    const resolved = resolve(candidate);
-    if (existsSync(resolved)) {
-      return {
-        markdown: readFileSync(resolved, 'utf8'),
-        source: resolved,
-      };
-    }
-  }
-
-  try {
-    const response = await fetch(rawChangelogUrl);
-    if (!response.ok) {
-      throw new Error(`${response.status} ${response.statusText}`);
-    }
-
-    return {
-      markdown: await response.text(),
-      source: rawChangelogUrl,
-    };
-  } catch (error) {
-    if (existsSync(outputPath)) {
-      console.log(`Release notes source unavailable (${error.message}); using existing ${outputPath}`);
-      return null;
-    }
-
-    throw new Error(`Could not fetch ${rawChangelogUrl}: ${error.message}`);
-  }
+  const release = JSON.parse(readFileSync(join(projectRoot, 'data/release.json'), 'utf8'));
+  const markdown = readFileSync(join(projectRoot, 'data/changelog.md'), 'utf8');
+  if (!markdown.includes(`## ${release.version}\n`)) throw new Error('Release and changelog do not match');
+  return { markdown, source: release.changelogSource };
 }
 
 function pageTemplate({ intro, bodyHtml }) {
@@ -156,7 +126,7 @@ function pageTemplate({ intro, bodyHtml }) {
   <meta name="twitter:title" content="Release Notes — Proof for Mac">
   <meta name="twitter:description" content="Latest Proof for Mac updates, fixes, reliability improvements, and beta development notes.">
   <meta name="twitter:image" content="https://www.proof-photo.com/assets/img/icon.png">
-  <link rel="stylesheet" href="../assets/css/style.css?v=20260719-premium-home">
+  <link rel="stylesheet" href="../assets/css/style.css?v=20260921-beta-downloads">
   <link rel="icon" href="../assets/img/icon.png" type="image/png">
 </head>
 <body>
@@ -173,7 +143,7 @@ function pageTemplate({ intro, bodyHtml }) {
           <li><a href="/#demo">Watch</a></li>
           <li><a href="/guide/">Guide</a></li>
           <li><a href="/support/">Support</a></li>
-          <li><a class="nav-store-link" href="https://store.proof-photo.com" target="_blank" rel="noreferrer">Try Proof</a></li>
+          <li><a class="nav-store-link" href="/download/mac">Download for Mac</a></li>
         </ul>
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
           <span></span><span></span><span></span>
@@ -200,7 +170,7 @@ ${bodyHtml}
       <div class="footer-inner">
         <div class="footer-brand">
           <a href="/" class="nav-logo" aria-label="Proof home"><img src="../assets/img/icon.png" alt="" aria-hidden="true" width="28" height="28"><span>Proof</span></a>
-          <p>An ultra-fast, lightweight, local photo culling app for Mac &amp; iPad.</p>
+          <p>A local home for culling and developing your photographs. Built for Fuji shooters first.</p>
         </div>
         <nav class="footer-links" aria-label="Footer navigation">
           <section class="footer-col" aria-labelledby="footer-product"><h2 id="footer-product">Product</h2><ul><li><a href="/#features">Product</a></li><li><a href="/#demo">Watch</a></li><li><a href="/guide/">Guide</a></li><li><a href="/manual/">Manual</a></li><li><a href="/release-notes/">Release Notes</a></li></ul></section>
