@@ -2,7 +2,7 @@ name: Sync published release
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 * * * *'
+    - cron: '17 20 * * *'
 permissions:
   contents: write
 concurrency:
