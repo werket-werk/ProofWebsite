@@ -53,7 +53,7 @@
     ]
   }
   </script>
-  <link rel="stylesheet" href="assets/css/style.css?v=20260921-beta-downloads">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261013-scroll-motion">
   <link rel="icon" href="assets/img/icon.png" type="image/png">
 </head>
 <body class="home-page">
@@ -68,7 +68,7 @@
         </a>
         <ul class="nav-links" id="nav-links">
           <li><a href="#features">Product</a></li>
-          <li><a href="#demo">Watch</a></li>
+          <li><a href="#fuji-x-raw">Fuji X-Raw</a></li><li><a href="#demo">Watch</a></li>
           <li><a href="guide/index.html">Guide</a></li>
           <li><a href="support/index.html">Support</a></li>
           <li><a class="nav-store-link" href="/download/mac">Download for Mac</a></li>
@@ -82,107 +82,62 @@
 
   <main id="main-content">
     <section id="hero" class="home-hero" aria-labelledby="hero-title">
-      <div class="container home-hero-copy">
-        <img class="hero-app-icon" src="assets/img/icon.png" alt="Proof app icon" width="112" height="112">
-        <p class="home-eyebrow">Proof for Mac</p>
-        <h1 id="hero-title">Keep the photographs that matter.</h1>
-        <p class="hero-tagline">A local home for culling and developing your photographs. Built for Fuji shooters first.</p>
-        <a class="home-download-button" href="/download/mac">Download for Mac</a>
-        <p class="home-download-note">Free during beta · No email required</p>
-        <a href="#demo" class="home-hero-action">
-          Watch the demo <span aria-hidden="true">↓</span>
-        </a>
+      <div class="container editorial-hero">
+        <div class="editorial-hero-copy">
+          <p class="home-eyebrow">Proof / A photographic workspace for Mac</p>
+          <h1 id="hero-title">Keep the photographs that <span class="darkroom-circle">matter.<svg viewBox="0 0 260 100" aria-hidden="true"><path d="M243 24C192 0 49 5 19 34C-15 66 34 91 134 87C217 85 265 62 244 32C234 17 207 11 186 10"/></svg></span></h1>
+          <p class="hero-tagline">The colour you chose. The frame you felt. A little room to decide what stays.</p>
+          <div class="editorial-actions"><a class="home-download-button" href="/download/mac">Download for Mac</a><a href="#demo" class="home-hero-action">See Proof at work <span aria-hidden="true">↗</span></a></div>
+          <p class="home-download-note">Free during beta · No email required</p>
+        </div>
+        <figure class="editorial-hero-image">
+          <img src="assets/img/proof-loupe.png" alt="A cactus photograph open in Proof’s Loupe workspace" width="3106" height="2116" fetchpriority="high" decoding="async">
+          <figcaption><span>01 / Look a little closer</span><span>Loupe · Proof for Mac</span></figcaption>
+        </figure>
       </div>
-
-      <div class="hero-preview" aria-label="Proof app preview">
-        <img class="hero-banner" src="assets/img/proof-banner.png" alt="Proof showing a folder-based photo grid with flags, ratings, labels, and selected photographs" width="3102" height="1524" decoding="async" fetchpriority="high">
-      </div>
+      <div class="container editorial-baseline"><span>Built for Fuji shooters first.</span><span>Local files. Camera colour. Your call.</span></div>
     </section>
 
-    <section id="features" class="home-product" aria-labelledby="product-title">
+    <section id="features" aria-labelledby="product-title">
       <div class="container">
-        <div class="home-section-intro">
-          <p class="home-eyebrow">Fuji SOOC shooters first</p>
-          <h2 id="product-title">From camera colour to your keepers.</h2>
-        </div>
-
-        <div class="home-principles">
-          <article>
-            <p class="home-principle-number" aria-hidden="true">01</p>
-            <h3>Move quickly</h3>
-            <p>Keep the colour you chose in camera. Flag, rate, and label your SOOC photographs without breaking your rhythm.</p>
-          </article>
-          <article>
-            <p class="home-principle-number" aria-hidden="true">02</p>
-            <h3>Compare with confidence</h3>
-            <p>Compare close frames in Survey, open Focus Mode for more room, and inspect the details in Loupe.</p>
-          </article>
-          <article>
-            <p class="home-principle-number" aria-hidden="true">03</p>
-            <h3>Stay close to your files</h3>
-            <p>Keep RAW and camera-rendered companions together, with folders and a catalog that stay on your Mac.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-product home-workflows" aria-labelledby="workflow-title">
-      <div class="container">
-        <div class="home-section-intro"><p class="home-eyebrow">Keep your camera’s character</p><h2 id="workflow-title">Start with the photograph you made.</h2></div>
-        <div class="home-principles">
-          <article><h3>Fuji X-Raw</h3><p>Connect a supported Fujifilm camera to explore film simulations and recipe settings on your RAF files. Preview camera-rendered results and reuse recipes.</p><a href="/guide/#fuji-x-raw">Explore the camera workflow →</a></article>
-          <article><h3>Develop on Mac</h3><p>Make non-destructive adjustments alongside your culling workflow. Edits stay in the catalog; export creates a new rendered file. Develop is in beta, with rendering and advanced tools still being refined.</p><a href="/guide/#develop">Get started with Develop →</a></article>
-          <article><h3>Your next step</h3><p>Import from a camera or SD card, export adjusted copies or unchanged originals, and publish selected photographs to a connected service when you choose.</p><a href="/manual/">Read the workflow manual →</a></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="screenshots" class="home-screenshots" aria-labelledby="screenshots-title">
-      <div class="container">
-        <div class="home-section-intro">
-          <p class="home-eyebrow">Inside Proof</p>
-          <h2 id="screenshots-title">Proof, up close.</h2>
-          <p>Grid, Survey, Loupe, ratings, preferences, and Fujifilm metadata from the current Mac app.</p>
-        </div>
-
-        <div class="home-screenshot-grid">
-          <figure class="home-shot">
-            <button type="button" class="home-shot-media home-shot-trigger" data-lightbox-src="assets/img/proof-grid.png" data-lightbox-alt="Proof grid view with folders, filters, and selected images" data-lightbox-caption="Grid — Folders, filters, ratings, and fast culling." aria-label="Open Grid screenshot">
-              <img src="assets/img/proof-grid.png" alt="Proof grid view with folders, filters, and selected images" width="3106" height="2116" loading="lazy" decoding="async">
+        <div class="editorial-section-heading"><p class="home-eyebrow">01 / The first pass</p><h2 id="product-title">A shoot becomes<br>a selection.</h2><p>Start with your folders. Keep RAW and camera-rendered companions together. Flag, rate, and label as you find the photographs you want to keep.</p></div>
+        <div class="editorial-grid-stage"><figure class="home-shot">
+            <button type="button" class="home-shot-media home-shot-trigger" data-lightbox-src="assets/img/proof-grid.png?v=20261013" data-lightbox-alt="Proof Grid showing black-and-white street photographs and RAW companions" data-lightbox-caption="Grid — Folders, filters, ratings, and fast culling." aria-label="Open Grid screenshot">
+              <img src="assets/img/proof-grid.png?v=20261013" alt="Proof Grid showing black-and-white street photographs and RAW companions" width="6016" height="3384" loading="lazy" decoding="async">
             </button>
             <figcaption><strong>Grid</strong><span>Folders, filters, ratings, and fast culling.</span></figcaption>
-          </figure>
-          <figure class="home-shot">
-            <button type="button" class="home-shot-media home-shot-trigger" data-lightbox-src="assets/img/proof-survey.png" data-lightbox-alt="Proof Survey view comparing two selected photos side by side" data-lightbox-caption="Survey — Compare selected frames side by side." aria-label="Open Survey screenshot">
-              <img src="assets/img/proof-survey.png" alt="Proof Survey view comparing two selected photos side by side" width="3194" height="2204" loading="lazy" decoding="async">
+          </figure><aside class="editorial-margin-note"><span class="editorial-index darkroom-decisions"><span class="darkroom-pick">P</span> / <span class="darkroom-reject">X</span> / U</span><h3>Pick. Reject. Undecided.</h3><p>A first pass can be that simple. Your photographs stay in the folders you choose; the catalog stays on your Mac.</p><a href="/guide/">Find your way around →</a></aside></div>
+      </div>
+    </section>
+
+    <section id="screenshots" aria-labelledby="screenshots-title">
+      <div class="container">
+        <div class="editorial-section-heading"><p class="home-eyebrow">02 / Make the call</p><h2 id="screenshots-title">Give each frame<br>some room.</h2><p>See selected photographs together in Survey. Open Focus Mode for more space, then move into Loupe to inspect focus and detail.</p></div>
+        <div class="editorial-survey-stage"><figure class="home-shot">
+            <button type="button" class="home-shot-media home-shot-trigger" data-lightbox-src="assets/img/proof-survey.png?v=20261013" data-lightbox-alt="Proof Survey showing three selected photographs side by side" data-lightbox-caption="Survey — Compare selected frames side by side." aria-label="Open Survey screenshot">
+              <img src="assets/img/proof-survey.png?v=20261013" alt="Proof Survey showing three selected photographs side by side" width="6016" height="3384" loading="lazy" decoding="async">
             </button>
             <figcaption><strong>Survey</strong><span>Compare selected frames side by side.</span></figcaption>
-          </figure>
-          <figure class="home-shot">
+          </figure></div>
+        <div class="editorial-detail-row"><div class="home-section-intro"><p class="home-eyebrow">Closer, when it counts</p><h3>The details can change your mind.</h3><p>Move from the whole photograph to the small things that make it a keeper. Flags and ratings remain close at hand.</p></div><figure class="home-shot">
             <button type="button" class="home-shot-media home-shot-trigger" data-lightbox-src="assets/img/proof-loupe.png" data-lightbox-alt="Proof Loupe view showing a single photo at large size" data-lightbox-caption="Loupe — Inspect focus and detail." aria-label="Open Loupe screenshot">
               <img src="assets/img/proof-loupe.png" alt="Proof Loupe view showing a single photo at large size" width="3106" height="2116" loading="lazy" decoding="async">
             </button>
             <figcaption><strong>Loupe</strong><span>Inspect focus and detail.</span></figcaption>
-          </figure>
-          <figure class="home-shot">
-            <button type="button" class="home-shot-media home-shot-trigger" data-lightbox-src="assets/img/proof-ratings.png" data-lightbox-alt="Proof ratings and labels workflow with star, pick, and color controls" data-lightbox-caption="Ratings &amp; labels — Pick, reject, rate, and sort quickly." aria-label="Open Ratings and labels screenshot">
-              <img src="assets/img/proof-ratings.png" alt="Proof ratings and labels workflow with star, pick, and color controls" width="3106" height="2116" loading="lazy" decoding="async">
+          </figure></div>
+      </div>
+    </section>
+
+    <section id="fuji-x-raw" class="editorial-colour" aria-labelledby="workflow-title">
+      <div class="container">
+        <div class="editorial-section-heading"><p class="home-eyebrow">03 / Fuji X-Raw · Camera development &amp; recipes</p><h2 id="workflow-title">Plug in your Fuji.<br>Make your next look.</h2><p>Develop your RAF files through a connected Fujifilm camera. Explore its film simulations, build new recipes, and see the colour rendered by the camera itself, right inside Proof.</p></div>
+        <div class="editorial-fuji-stage"><figure class="home-shot">
+            <button type="button" class="home-shot-media home-shot-trigger" data-lightbox-src="assets/img/proof-fuji-x-raw.png?v=20261013" data-lightbox-alt="Proof Fuji X-Raw showing a photo booth photograph with film simulation and recipe controls" data-lightbox-caption="Fuji X-Raw — Develop RAF files through your connected camera and create recipes." aria-label="Open Fuji X-Raw screenshot">
+              <img src="assets/img/proof-fuji-x-raw.png?v=20261013" alt="Proof Fuji X-Raw showing a photo booth photograph with film simulation and recipe controls" width="6016" height="3384" loading="lazy" decoding="async">
             </button>
-            <figcaption><strong>Ratings &amp; labels</strong><span>Pick, reject, rate, and sort quickly.</span></figcaption>
-          </figure>
-          <figure class="home-shot">
-            <button type="button" class="home-shot-media home-shot-trigger" data-lightbox-src="assets/img/proof-preferences.png" data-lightbox-alt="Proof preferences window with application settings" data-lightbox-caption="Preferences — Set workflow defaults." aria-label="Open Preferences screenshot">
-              <img src="assets/img/proof-preferences.png" alt="Proof preferences window with application settings" width="1924" height="1826" loading="lazy" decoding="async">
-            </button>
-            <figcaption><strong>Preferences</strong><span>Set workflow defaults.</span></figcaption>
-          </figure>
-          <figure class="home-shot">
-            <button type="button" class="home-shot-media home-shot-trigger" data-lightbox-src="assets/img/proof-fujifilm-film-sim-metadata.png" data-lightbox-alt="Proof metadata view showing Fujifilm film simulation information" data-lightbox-caption="Fujifilm metadata — See film simulation and recipe details." aria-label="Open Fujifilm metadata screenshot">
-              <img src="assets/img/proof-fujifilm-film-sim-metadata.png" alt="Proof metadata view showing Fujifilm film simulation information" width="2468" height="1482" loading="lazy" decoding="async">
-            </button>
-            <figcaption><strong>Fujifilm metadata</strong><span>See film simulation and recipe details.</span></figcaption>
-          </figure>
-        </div>
+            <figcaption><strong>Fuji X-Raw</strong><span>Your RAF. Your recipe. Your camera’s rendering.</span></figcaption>
+          </figure><div class="fuji-workflow"><article><span class="editorial-index">01 / CONNECT</span><h3>Your camera does the developing.</h3><p>Connect a supported Fujifilm camera in USB RAW-conversion mode. Select a RAF in Proof and use the camera’s own rendering to develop it.</p></article><article><span class="editorial-index">02 / CREATE</span><h3>Find a look. Make it yours.</h3><p>Choose a film simulation and shape your recipe with the settings your camera supports. Render a preview, compare the result, then convert.</p></article><article><span class="editorial-index">03 / REUSE</span><h3>Keep the recipe, too.</h3><p>Save your recipes for another photograph. Import and export recipe text to bring favourite looks into your workflow.</p></article></div><div class="fuji-section-footer"><a class="home-hero-action" href="/guide/#fuji-x-raw">Explore camera development &amp; recipes <span aria-hidden="true">↗</span></a><p>Requires a supported Fujifilm camera and USB RAW-conversion mode. Available settings depend on the camera and source photograph.</p></div></div>
+        <div class="editorial-detail-row editorial-develop-row"><div class="editorial-margin-note"><p class="home-eyebrow">Develop / In beta</p><h3>A little further, if you need it.</h3><p>Develop on Mac with non-destructive adjustments. Edits stay in the catalog; export creates a new rendered file. Develop is in beta and still being refined.</p><a href="/guide/#develop">Explore Develop →</a></div><figure class="home-shot"><button type="button" class="home-shot-media home-shot-trigger" data-lightbox-src="assets/img/proof-develop.png?v=20261013" data-lightbox-alt="Proof Develop showing a cactus photograph with adjustment controls, histogram, and colour wheels" data-lightbox-caption="Develop — Non-destructive adjustments on Mac. In beta." aria-label="Open Develop screenshot"><img src="assets/img/proof-develop.png?v=20261013" alt="Proof Develop showing a cactus photograph with adjustment controls, histogram, and colour wheels" width="6016" height="3384" loading="lazy" decoding="async"></button><figcaption><strong>Develop</strong><span>Adjustments on Mac. Still being refined.</span></figcaption></figure></div>
       </div>
     </section>
 
@@ -191,11 +146,11 @@
         <div class="home-section-intro">
           <p class="home-eyebrow">Product walkthrough</p>
           <h2 id="demo-title">See Proof at work.</h2>
-          <p>A look at the current Mac app.</p>
+          <p>From the first pass to the finished selection, in the current Mac app.</p>
         </div>
 
         <div class="home-demo-frame">
-          <video class="demo-video" controls preload="metadata" poster="assets/img/proof-develop.png" aria-describedby="demo-summary">
+          <video class="demo-video" controls preload="metadata" poster="assets/img/proof-develop.png?v=20261013" aria-describedby="demo-summary">
             <source src="assets/video/proof-demo.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -437,5 +392,6 @@
     });
   </script>
   <script src="/assets/js/signup.js" defer></script>
+  <script src="/assets/js/darkroom.js" defer></script>
 </body>
 </html>
