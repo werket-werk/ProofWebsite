@@ -127,7 +127,7 @@ function pageTemplate({ intro, bodyHtml }) {
   <meta name="twitter:description" content="Latest Proof for Mac updates, fixes, reliability improvements, and beta development notes.">
   <meta name="twitter:image" content="https://www.proof-photo.com/assets/img/icon.png">
   <link rel="stylesheet" href="../assets/css/style.css?v=20260921-beta-downloads">
-  <link rel="icon" href="../assets/img/icon.png" type="image/png">
+  <link rel="icon" href="../assets/img/favicon.png" type="image/png">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -135,7 +135,7 @@ function pageTemplate({ intro, bodyHtml }) {
     <nav class="site-nav" aria-label="Main navigation">
       <div class="container nav-inner">
         <a href="/" class="nav-logo" aria-label="Proof home">
-          <img src="../assets/img/icon.png" alt="" aria-hidden="true" width="28" height="28">
+          <img src="../assets/img/icon.webp" alt="" aria-hidden="true" width="28" height="28">
           <span>Proof</span>
         </a>
         <ul class="nav-links" id="nav-links">
@@ -169,7 +169,7 @@ ${bodyHtml}
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <a href="/" class="nav-logo" aria-label="Proof home"><img src="../assets/img/icon.png" alt="" aria-hidden="true" width="28" height="28"><span>Proof</span></a>
+          <a href="/" class="nav-logo" aria-label="Proof home"><img src="../assets/img/icon.webp" alt="" aria-hidden="true" width="28" height="28"><span>Proof</span></a>
           <p>A local home for culling and developing your photographs. Built for Fuji shooters first.</p>
         </div>
         <nav class="footer-links" aria-label="Footer navigation">

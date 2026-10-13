@@ -40,6 +40,8 @@ function copyEntry(source, destination) {
     return;
   }
 
+  if (source.endsWith('/proof-social.png')) return;
+  if (!source.endsWith('/icon.png') && /\.(png|jpe?g)$/i.test(source) && existsSync(source.replace(/\.(png|jpe?g)$/i, '.webp'))) return;
   cpSync(source, destination);
 }
 
