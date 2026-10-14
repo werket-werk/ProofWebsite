@@ -4,11 +4,12 @@
   "version": "1.0.0",
   "scripts": {
     "generate:release-notes": "node scripts/generate-release-notes.mjs",
-    "build": "npm run generate:release-notes && node scripts/build.mjs",
+    "build": "node scripts/generate-release-metadata.mjs && npm run generate:release-notes && node scripts/build.mjs",
     "test": "node --test tests/*.test.mjs",
-    "refresh:release": "node scripts/refresh-release.mjs",
+    "refresh:release": "node scripts/refresh-release.mjs && node scripts/generate-release-metadata.mjs",
     "dev": "wrangler pages dev dist",
-    "check": "npm test && npm run build"
+    "check": "npm test && npm run build",
+    "pretest": "node scripts/generate-release-metadata.mjs"
   },
   "type": "module",
   "devDependencies": {

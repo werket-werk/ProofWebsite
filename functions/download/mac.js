@@ -1,4 +1,4 @@
-import release from '../../data/release.json' with { type: 'json' };
+import release from '../../data/release-metadata.js';
 import { validateRelease } from '../../lib/release.js';
 export function onRequest({ request, env, waitUntil }) {
   if (!['GET','HEAD'].includes(request.method)) return new Response('Method not allowed', { status: 405, headers: { allow: 'GET, HEAD' } });
