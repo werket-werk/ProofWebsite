@@ -764,6 +764,8 @@ section > .container {
   color: var(--text-secondary);
   font-size: 0.825rem;
 }
+.footer-bottom a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.footer-bottom a:hover { color: var(--text); }
 
 /* ── Support / Privacy pages ── */
 .page-hero {
